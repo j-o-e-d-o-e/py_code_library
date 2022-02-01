@@ -1,0 +1,9 @@
+ternary
+
+
+
+a if condition is true else b
+
+EXAMPLE
+a = []
+b = "empty" if not a else "not empty"

@@ -1,0 +1,20 @@
+pyCharm
+
+shortcuts
+
+- Ctrl + j: auto-completion for templates/coding tasks, e.g. if __name__ = ...
+- Ctrl + shift + F10: run
+- Ctrl + x: delete line
+- Ctrl + d: copy line to next line
+- Ctrl + q: quick documentation
+- Ctrl + Shift + i: quick definition
+- Ctrl + f: find phrase in file
+- Ctrl + r: replace phrase
+- Ctrl + Alt + l: reformat code
+- Ctrl + Alt + m: create new method by extracting code
+- Alt + Enter: open context menu for creating getters, setters, main automatically
+- Ctrl + Shift + k: comment/uncomment line(s) (customized)
+- Shift + Esc: close tabs below like python console
+- Shift + Tab: go to 'Switcher' to switch to another section
+
+- Don't name files as "test" (testfile) or modules name

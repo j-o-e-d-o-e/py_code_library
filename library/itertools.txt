@@ -1,0 +1,17 @@
+itertools
+
+module, building iterators
+
+-islice(iterable, start, stop[, step]) returns selected elements from the iterable
+-permutations(iterable) returns permutations of elements in the iterable
+
+EXAMPLES
+import itertools
+
+text = "fulminanz"
+tranche = list(itertools.islice(text,2,8))
+#prints: ['l', 'm', 'i', 'n', 'a', 'n']
+
+perms = itertools.permutations(["r","e","d"])
+list(perms)
+#prints: [('r', 'e', 'd'), ('r', 'd', 'e'), ('e', 'r', 'd'), ('e', 'd', 'r'), ('d', 'r', 'e'), ('d', 'e', 'r')]

@@ -1,0 +1,12 @@
+simpleHTTPServer
+
+
+
+SETUP SERVER
+python -m http.server 8080
+
+ACCESS SERVER
+http://localhost:8080
+
+EXAMPLE
+python -m simpleHTTPServer 8080

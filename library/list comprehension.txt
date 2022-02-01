@@ -1,0 +1,22 @@
+list comprehension
+
+advanced loops
+
+Shortcut for loops. Returns a <list.
+
+EXAMPLES
+#list comprehension with if-statement:
+even_squares = [x ** 2 for x in range (1,12) if x % 2 == 0] 
+#prints: [4, 16, 36, 64, 100]
+
+#two arguments:
+colours = [ "red", "green", "yellow", "blue" ]
+things = [ "house", "car", "tree" ]
+coloured_things = [(x,y) for x in colours for y in things]
+#prints: [('red', 'house'), ('red', 'car'), ('red', 'tree'), ('green', 'house'), ... , ('blue', 'tree')]
+
+#list comprehension with nested list:
+matrix = [[0, 2, 4],[6, 8, 10, 12]]
+flattened = [n for row in matrix for n in row]
+#prints: [0, 2, 4, 6, 8, 10, 12]
+

@@ -1,0 +1,48 @@
+generators
+
+advanced iterators
+
+- Create/generates specific iterators
+- Contains 'yield'-statements for returning values instead of 'return'-statement
+- Remembers last executed 'yield'-command and starts thereafter for the next iterator-call
+
+EXAMPLES
+def abc_generator():
+    yield("a")
+    yield("b")
+
+test = abc_generator()
+test.__next__() #prompts: "a"
+test.__next__() #prompts: "b"
+test.__next__() #prompts: StopIteration
+
+
+def genPrimes():
+    primes = [2]
+    n = 2
+    while True:
+        if n == 2:
+            yield 2
+        if all(n % p != 0 for p in primes):
+            newPrime = n
+            primes.append(n)
+            yield newPrime
+        n+=1
+
+test = genPrimes()
+next(test) #prompts: 2
+next(test) #prompts: 3
+next(test) #prompts: 5
+
+
+def permutations(items):
+    n = len(items)
+    if n==0: yield []
+    else:
+        for i in range(len(items)):
+            for j in permutations(items[:i]+items[i+1:]):
+                yield [items[i]]+j
+
+for i in permutations(["r","e","d"]):
+	print("".join(i) + ", ", end="")
+#prints: red, rde, erd, edr, dre, der, 

@@ -1,0 +1,9 @@
+jupyter notebook
+
+for machine-learning-demos
+
+- create virtual env (if necessary): python3 -m venv env
+- start virtual env: source jupyter-env/bin/activate
+- start notebook: jupyter notebook
+- stop notebook: Ctrl + C
+- stop virtual env: deactivate

@@ -1,0 +1,9 @@
+'with' for opening files
+
+
+
+Shortcut. Instead of using open() AND close()
+
+EXAMPLE
+with open("text.txt", "w") as my_file:
+    my_file.write("hello")

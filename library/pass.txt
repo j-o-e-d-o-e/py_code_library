@@ -1,0 +1,15 @@
+pass
+
+
+
+- The 'pass'-statement is a null operation. Nothing happens when it executes.
+- Useful in places where code has not been written yet
+- Especially useful for superclasses which pass on their attributes to their subclasses
+
+EXAMPLE
+for char in "abc:
+	if char == "a":
+		pass
+		continue
+	print(char, end="")
+#prints: ac

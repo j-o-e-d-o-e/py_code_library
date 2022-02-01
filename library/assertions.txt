@@ -1,0 +1,18 @@
+assertions
+
+debugging
+
+- 'assert'-statements make sure that a specific condition holds true
+- If not, execution halts and AssertionError is raised
+
+EXAMPLE
+door = "open"
+assert door == "open" #first 'assert' goes fine
+door = "I'm sorry, Dave. I'm afraid I can\'t do that."
+assert door == "open"
+#raises assertion error
+
+#to make sure a list isn't empty:
+a = []
+assert not(len(a)) == 0, "list is empty"
+#prompts: (...) AssertionError: list is empty

@@ -1,0 +1,24 @@
+tuples()
+
+data structures
+
+- immutable, very much like strings
+- concatenation possible
+- extra comma declares one value-expression as a singleton tuple
+
+EXAMPLES
+a = ('I', 'am', 'a', 'test', 'tuple')
+a[::2]
+#prompts: ('I', 'a', 'tuple')
+
+a + ("really",)
+#prompts: ('I', 'am', 'a', 'test', 'tuple', 'really')
+
+a[1] #prompts string: 'am'
+
+a[1:2] #prompts tuple: ('am',)
+
+#swap variables:
+x = 1
+y = 2
+(x,y) = (y,x)

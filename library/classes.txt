@@ -1,0 +1,10 @@
+classes
+
+
+
+- 'class Name(object)' declares a class 'Name' which inherits from object
+- 'instance = class()' creates a new instance of that class
+- 'instance.method()' invokes a method on object. Declared with 'self' as parameter
+- 'class.method()' invokes a static method. Declared without 'self'
+- 'instance.attribute' accesses the defined attribute of that instance
+- 'from filename import classname' imports classes from other files

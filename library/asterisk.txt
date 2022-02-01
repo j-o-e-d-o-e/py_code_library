@@ -1,0 +1,6 @@
+*asterisk*
+
+
+
+- '*' applies each element of an iterable as a separate argument to a function/method
+- shortcut for converting, eg tuples to ints

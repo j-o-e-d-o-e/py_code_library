@@ -1,0 +1,36 @@
+wikipedia
+
+Web API, 3rd party module
+
+- 'wikipedia.search("word")' returns a list containing matching entry titles
+- 'wikipedia.summary("entry")' returns a summary of the 'entry'
+- 'wikipedia.page()' creates WikipediaPage-instance
+- 'page.title' displays the title of the specified 'page'
+- 'page.url' displays the url
+- 'page.content' displays the content
+
+EXAMPLE
+import wikipedia
+
+def print_wiki(word):
+    """
+    - searches for pages on wiki that match the word
+    - prints results with page titles and urls
+    """
+    res = wikipedia.search(word)#returns titles of all matching entries
+    index = 1 #numeration for printing
+    for i in res:
+        try:
+            page=wikipedia.page(i)#creates WikipediaPage instance
+        except wikipedia.exceptions.DisambiguationError:
+            print("DisambiguationError")
+            continue
+        except wikipedia.exceptions.PageError:
+            print("PageError for result: " + res)
+            continue
+
+        print(index, "-", page.title, "\n", page.url)
+        index+=1
+
+if __name__ == "__main__":
+    print_wiki("world")

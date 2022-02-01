@@ -1,0 +1,9 @@
+enumerate(iterable, start=0)
+
+build-in function
+
+Returns an enumerate object, a tuple containing a count and the value from iterating over the iterable
+
+EXAMPLE
+list(enumerate("babara"))
+#prompts: [(0, 'b'), (1, 'a'), (2, 'b'), (3, 'a'), (4, 'r'), (5, 'a')]

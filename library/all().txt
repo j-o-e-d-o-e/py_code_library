@@ -1,0 +1,10 @@
+all()
+
+build-in function
+
+Returns 'True' if all elements of an iterable are true. 
+
+EXAMPLE
+slic = "racecar"
+all(slic[i] == slic[len(slic)-1-i] for i in range(int(len(slic)/2)))
+# prompts: 'True', since "racecar" is a palindrome

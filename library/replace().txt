@@ -1,0 +1,12 @@
+replace()
+
+for strings
+
+- S.replace(old, new[, count])
+- returns a copy of S with all occurrences of substring 'old' replaced by 'new'
+- [,count] limits the number of replacements 
+
+EXAMPLE
+import string
+
+"funny".replace("n", "z",2) #prompts: 'fuzzy'

@@ -1,0 +1,19 @@
+map
+
+advanced function
+
+- map(function, *iterable)
+- map takes an iterable as input, applies the function to each element and returns a new iterable
+- only one function, but multiple iterables
+- allows using functions as objects ("higher order procedure")
+
+EXAMPLES
+for i in map(abs,[1,-2,-3,-4]):
+	print(i, end="")
+#prints: 1234
+
+list_1 =[1,28,36]
+list_2 =[2,57,9]
+for i in map(min, list_1, list_2):
+	print(i,end=" ")
+#prints: 1 28 9

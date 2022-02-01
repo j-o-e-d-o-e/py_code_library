@@ -1,0 +1,18 @@
+reduce()
+
+advanced funtion
+
+- applies a function to all the list elements and reduces the list to a single value
+- process
+  - At first step, first two elements of sequence are picked and the result is obtained
+  - Next step is to apply the same function to the previously attained result and the number just succeeding the second element and the result is again stored
+  - This process continues till no more elements are left in the container
+  - The final returned result is returned
+
+EXAMPLE
+import functools
+
+list = [1,3,5,6,2]
+print("Sum:", functools.reduce(lambda a,b: a+b, list))
+print("Max:", functools.reduce(lambda a,b: a if a > b else b, list))
+

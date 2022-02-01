@@ -1,0 +1,10 @@
+regex
+
+advanced, regular expressions
+
+"regular expressions". Shortcut for pattern matching. from modul regex
+
+- compile() creates & returns a pattern object
+- search() searches for matches  & returns a match object
+- match() gets the matched strings
+- finds all() returns a list of all string matches

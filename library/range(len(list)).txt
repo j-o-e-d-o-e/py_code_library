@@ -1,0 +1,18 @@
+range(len(list))
+
+expression for loops
+
+Loop using indices, highest num excluded 
+
+EXAMPLE
+#sum up all integers from the list, without using sum()
+
+grades = [100, 100, 90, 40, 80, 100]
+
+def grades_sum(scores):
+    total=0
+    for i in range(len(scores)):
+        total+=scores[i]
+    return total
+
+print grades_sum(grades)

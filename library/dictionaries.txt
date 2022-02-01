@@ -1,0 +1,47 @@
+dictionaries{}
+
+data structures
+
+- stores pairs of data {"key": "value"}
+- values can be of any type
+- keys must be unique & immutable (int, float, string, tuple, bool)
+- no guaranteed order
+- 'dict[key] = value' adds new pair of data to the dict
+- 'dict[key]' returns particular value associated to that key
+- 'del(dict[key])' removes the value to that key in the dict
+- 'dict.items()', 'dict.keys()' and 'dict.values()' return iterables
+- 'dict.get(key,default)' returns the value for 'key' if 'key' is in the dictionary, else 'default'
+- 'a = dict.copy()' copies dict (cloning). aliasing: a = dict
+
+EXAMPLES
+d = {'a': 'apple', 'b': 'berry', 'c': 'cherry'}
+
+for key in d:
+    print (key, d[key], end=" ")
+#prints: a apple b berry c cherry
+
+"a" in d
+#prompts: True
+
+"apple" in d.values()
+#prompts: True
+
+d.items()
+#prompts: dict_items([('a', 'apple'), ('b', 'berry'), ('c', 'cherry')]) 
+
+d.keys()
+#prompts: dict_keys(['a', 'b', 'c'])
+
+d.values()
+#prompts: dict_values(['apple', 'berry', 'cherry'])
+
+d = {}
+for word in "She loves you yeah yeah yeah".split():
+	if word in d:
+		d[word] +=1
+	else:
+		d[word] = 1
+d #prompts: {'She': 1, 'yeah': 3, 'loves': 1, 'you': 1}
+
+d.get('e', 0)
+#prompts: 0 (instead of Error)

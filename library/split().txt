@@ -1,0 +1,24 @@
+split()
+
+from strings to lists
+
+S.split(sep=None, maxsplit=-1)
+
+Returns a list of the words in S, using sep as the delimiter string which gets cut out.
+
+If sep is not specified or None, any whitespace string is a separator and empty strings are
+removed from the result.
+
+EXAMPLES
+"My name is simon".split("m") #returns: ['My na', 'e is si', 'on']
+
+script = """hello, here i am
+i am writing you this little text
+
+because i want to have a text
+with triple quotes as an example."""
+
+print(script.split("\n")) #removes all "\n"
+#['hello, here i am', 'i am writing you this little text', '', 'because i want to have a text', 'with triple quotes as an example.']
+
+

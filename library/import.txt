@@ -1,0 +1,14 @@
+import
+
+
+
+- import 'module' OR
+- from 'module import 'function' as 'name'
+
+EXAMPLE
+from datetime import datetime as d
+
+my_b = d(1999,9,9)
+tdy = d.today()
+delta = tdy - my_b
+print(delta.days)

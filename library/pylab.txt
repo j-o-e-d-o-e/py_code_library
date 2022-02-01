@@ -1,0 +1,18 @@
+pylab
+
+for plotting/graphs
+
+- generates a plot/graph
+- arguments are lists of values of the same length
+
+EXAMPLE
+import pylab
+
+a=[]
+b=[]
+for i in range(9):
+    a.append(i)
+    b.append(i**2)
+
+pylab.plot(a,b, "g--", linewidth=3)
+#displays cubic plot as green "--"-line

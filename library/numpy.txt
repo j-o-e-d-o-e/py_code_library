@@ -1,0 +1,48 @@
+numpy
+
+numerical computing
+
+- provides multidimensional array objects (eg. for open cv)
+
+- array.ndim returns dimension of array
+- array.size returns amount of elements
+
+- array[x,y] returns element of two-dimensional array
+- array[x:y, y:z] returns set from array
+
+- array.min()/array.max() returns min/max
+- array.sum() returns sum of array
+
+- a+b sums up the arrays a and b elementwise
+- similarly, subtraction, multiplication and division
+
+- np.hstack((a,b)) stacks arrays a and b horizontally
+- similarly, np.vstack((a,b)) stacks vertically
+
+- axis 0: columns, axis 1: rows
+- e.g. array.sum(axis=0) returns sum of each column
+
+- array.shape returns shape, i.e. number of columns and rows
+- array.reshape(x,y) reshapes array with x rows and y columns
+
+- array.ravel() flattens array
+
+EXAMPLES
+a = np.array(("a","b","c"))
+print(a) #['a' 'b' 'c']
+
+b = np.array([(1,2,3), (4,5,6)])
+print(b) #[[1 2 3] [4 5 6]]
+print(b.ndim) #2
+print(b[0,2]) #3
+print(b[0:, 2]) #prints second elem of each row: [3 6]
+print(b[0:1, 0:2]) #[[1,2]]
+print(b + b) #[[ 2  4  6] [ 8 10 12]]
+print(np.hstack((b,b))) #[[1 2 3 1 2 3] [4 5 6 4 5 6]]
+print(b.sum(axis=0)) #[5 7 9]
+print(b.shape) #(2, 3)
+print(b.ravel()) #[1 2 3 4 5 6]
+
+c = b.reshape(3,2)
+print(c) #[[1 2] [3 4] [5 6]]
+print(c.max()) #6

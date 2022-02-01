@@ -1,0 +1,17 @@
+slice
+
+for lists, strings
+
+- [start:end:stride]
+- s[i:j] returns a portion of string s from index i to index j-1
+- Negative 'stride' goes from right to left, therefore swap 'start' and 'end'
+
+EXAMPLES
+"sensible contrasts"[1:8:2]
+
+"hello"[:-1]
+#prompts: 'hell'
+
+my_list = range(1, 11)
+backwards = my_list[::-1]
+print (backwards)

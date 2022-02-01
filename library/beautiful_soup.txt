@@ -1,0 +1,10 @@
+beautiful soup
+
+3rd party module, extracting from HTML
+
+bs4 pulls data out of HTML and XML files. Its methods are used to locate specific parts of an HTML document.
+
+- bs4.BeautifulSoup('string containing the HTML') parses an HTML file and returns a bs-object
+- 'bs_object'.select('CSS selector') retrieves a web page element and returns a list of 'tag'-objects
+- 'bs_object'.get('string of an attribute') accesses attribute values from an element and returns the attribute's value
+- 'tag'-values can be passed to the str() function to show their HTML tags

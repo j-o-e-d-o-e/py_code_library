@@ -1,0 +1,5 @@
+type()
+
+
+
+Type in parentheses the object, whose type you'd like to know

@@ -1,0 +1,17 @@
+datetime
+
+module, manipulating dates/times
+
+-datetime() returns a datetime-object. Year, month and day are required
+-datetime.now() returns the current local date and time as a datetime-object
+-datetime.isocalendar(datetime.now()) returns 3-tuple containing ISO year, week number, and weekday
+
+EXAMPLES
+from datetime import datetime
+
+# '*' applies each element of an iterable as a separate argument
+date1 = (1999, 9, 19) #tuples
+date2 = (1999, 9, 22)
+delta = datetime(*date1) - datetime(*date2)
+print(delta.days)
+#prints: -3

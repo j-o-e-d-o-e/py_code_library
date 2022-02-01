@@ -1,0 +1,8 @@
+shutil
+
+module, copying/archiving
+
+- shutil.copy('source', 'destination') copies the file at the path source to the folder at the path destination
+- shutil.copytree('source', 'destination') copies an entire folder and every folder and file contained in it
+- shutil.move('source', 'destination') moves the file or folder at the path source to the path destination
+- shutil.rmtree('path') removes the folder at path, and all files and folders it contains will also be deleted (for deleting with backups see 'send2trash')

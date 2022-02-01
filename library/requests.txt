@@ -1,0 +1,16 @@
+requests
+
+3rd party module, http
+
+- requests.get() takes a string of a URL to download
+- raise_for_status() checks if download succeeded and raises an exception if error occurred during download
+
+EXAMPLES
+import requests
+
+res = requests.get('https://automatetheboringstuff.com/files/rj.txt')
+try:
+    res.raise_for_status() #or: res.status_code == requests.codes.ok
+except Exception as exc:
+    print('There was a problem: %s' % (exc))
+print(res.text[:250])

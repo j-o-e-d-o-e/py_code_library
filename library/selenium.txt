@@ -1,0 +1,15 @@
+selenium
+
+3rd party module, webscraping
+
+- 'webdriver.Firefox()'/'webdriver.Chrome()' creates WebDriver-'instance' and starts respective browser displaying blank page
+- 'geckodriver'/'chromedriver' needs to be installed for Firefox/Chrome
+- 'browser.get(URL)' directs WebDriver-object to specified URL
+- 'browser.find_element_*'/'browser.find_elements_*' find element(s) and return WebElement-object(s)
+- 'browser.refresh()' clicks the Refresh/Reload-button
+- 'browser.quit()' clicks the Close-Window-button
+- 'WebElement.text' displays its text-attribute
+- 'WebElement.clear()' clears the text
+- 'WebElement.send_keys("input")' inputs text
+- 'WebElement.click()' clicks the WebElement-object
+- Further info: http://selenium-python.readthedocs.io
