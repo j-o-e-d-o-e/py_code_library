@@ -9,7 +9,7 @@ Returns a list of the words in S, using sep as the delimiter string which gets c
 If sep is not specified or None, any whitespace string is a separator and empty strings are
 removed from the result.
 
-EXAMPLES
+EXAMPLE
 "My name is simon".split("m") #returns: ['My na', 'e is si', 'on']
 
 script = """hello, here i am

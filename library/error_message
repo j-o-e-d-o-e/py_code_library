@@ -2,11 +2,12 @@ error messages
 
 
 - 'IndexError': trying to access beyond the limits of a list
-EXAMPLE:
+
+EXAMPLE
 test = [1,2,3]
 test[4]
 - 'TypeError': trying to convert an inappropriate type or mixing data types without appropriate coercion
-EXAMPLE:
+
 int(test) or
 "3"/4
 - 'ValueError': operand type okay, but value is illegal

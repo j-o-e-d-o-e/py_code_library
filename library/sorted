@@ -10,7 +10,7 @@ sorted(iterable[, key][, reverse])
 - 'reverse'-parameter with boolean value is used for reversed order
 - Useful for sorting dicts
 
-EXAMPLES
+EXAMPLE
 nums = [0,3,6,9]
 sorted (nums, reverse=True)
 #prompts: [9, 6, 3, 0]

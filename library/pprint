@@ -5,7 +5,7 @@ pprint()
 - pprint.pprint() prompts dicts or lists in alphabetically or numerically correct order
 - pprint.pformat() returns this same text
 
-EXAMPLE: 
+EXAMPLE
 message = "a test message"
 
 def count(message):

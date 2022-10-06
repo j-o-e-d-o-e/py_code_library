@@ -4,7 +4,7 @@ for lists/dicts, from copy
 
 copy.copy makes a duplicate copy of a mutable value like a list or dictionary, not just a copy of a reference. deepcopy() copies inner lists as well.
 
-EXAMPLE:
+EXAMPLE
 """to make changes to a list without modifying the original list"""
 import copy
 spam = ["a", "b", "c", "d", "e"]

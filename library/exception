@@ -8,7 +8,7 @@ try/except/finally
 - 'else'-statement is executed when execution of associated 'try'-body completes with no exceptions
 - 'finally'-statement is always executed after 'try', 'else' and 'except' clauses, even if they raised an error or executed a 'break', 'continue' or 'return'
 
-EXAMPLES
+EXAMPLE
 try:
     guess = int(input("Guess a number: "))
 except ValueError:

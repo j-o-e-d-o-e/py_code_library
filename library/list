@@ -9,7 +9,7 @@ data structures
 - list(s) converts string to list
 - join() turns a list of characters into a string
 
-EXAMPLES
+EXAMPLE
 a = [2,1,0,3]
 del(a[2])
 a #prompts: [2, 1, 3]

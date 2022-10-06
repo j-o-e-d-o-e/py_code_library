@@ -6,7 +6,7 @@ strings
 - split() splits a string in pieces and returns a list
 - str.upper() returns string str in upper case
 
-EXAMPLES
+EXAMPLE
 name = "Zophie a cat"
 print (name)
 newName = name[0:7] + 'the' + name[8:12]

@@ -4,7 +4,7 @@ _underscore_
 
 'Underscores' are used to indicate "throwaway"-variables, which are of no further interest. This is merely a convention, the 'underscore' still gets a value assigned.
 
-EXAMPLES
+EXAMPLE
 a=(1,2,3,4)
 b,_,_,c = a
 b,c

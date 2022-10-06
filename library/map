@@ -7,7 +7,7 @@ advanced function
 - only one function, but multiple iterables
 - allows using functions as objects ("higher order procedure")
 
-EXAMPLES
+EXAMPLE
 for i in map(abs,[1,-2,-3,-4]):
 	print(i, end="")
 #prints: 1234

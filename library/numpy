@@ -27,7 +27,7 @@ numerical computing
 
 - array.ravel() flattens array
 
-EXAMPLES
+EXAMPLE
 a = np.array(("a","b","c"))
 print(a) #['a' 'b' 'c']
 

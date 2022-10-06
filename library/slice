@@ -6,7 +6,7 @@ for lists, strings
 - s[i:j] returns a portion of string s from index i to index j-1
 - Negative 'stride' goes from right to left, therefore swap 'start' and 'end'
 
-EXAMPLES
+EXAMPLE
 "sensible contrasts"[1:8:2]
 
 "hello"[:-1]

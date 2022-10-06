@@ -5,7 +5,7 @@ module, building iterators
 -islice(iterable, start, stop[, step]) returns selected elements from the iterable
 -permutations(iterable) returns permutations of elements in the iterable
 
-EXAMPLES
+EXAMPLE
 import itertools
 
 text = "fulminanz"

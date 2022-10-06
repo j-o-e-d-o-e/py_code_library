@@ -6,7 +6,7 @@ Lambda as a shortcut to create an anonymous functions.
 - 'return'-statement implicitly included
 - filter(), map() and reduce() are combinable with lambda. All three expect two arguments: 'function' & 'iterable'. Each returns a new iterable
 
-EXAMPLES
+EXAMPLE
 f = lambda x: x*2 #works also with parenthesis: f = (lambda x: x*2)
 f(3) #prompts: 6
 

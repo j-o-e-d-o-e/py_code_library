@@ -6,7 +6,7 @@ data structures
 - concatenation possible
 - extra comma declares one value-expression as a singleton tuple
 
-EXAMPLES
+EXAMPLE
 a = ('I', 'am', 'a', 'test', 'tuple')
 a[::2]
 #prompts: ('I', 'a', 'tuple')

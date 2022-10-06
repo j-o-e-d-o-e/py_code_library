@@ -13,7 +13,7 @@ unique elements, set theory
 - union() returns a set containing all unique elements of both sets
 - discard("element") discards 'element' from set
 
-EXAMPLES
+EXAMPLE
 {("punk", "rock"),"jazz", "jazz"}
 #prompts only: {'jazz', ('punk', 'rock')}
 

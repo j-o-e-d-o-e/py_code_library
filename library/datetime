@@ -6,7 +6,7 @@ module, manipulating dates/times
 -datetime.now() returns the current local date and time as a datetime-object
 -datetime.isocalendar(datetime.now()) returns 3-tuple containing ISO year, week number, and weekday
 
-EXAMPLES
+EXAMPLE
 from datetime import datetime
 
 # '*' applies each element of an iterable as a separate argument

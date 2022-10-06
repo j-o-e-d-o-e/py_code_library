@@ -5,7 +5,7 @@ requests
 - requests.get() takes a string of a URL to download
 - raise_for_status() checks if download succeeded and raises an exception if error occurred during download
 
-EXAMPLES
+EXAMPLE
 import requests
 
 res = requests.get('https://automatetheboringstuff.com/files/rj.txt')

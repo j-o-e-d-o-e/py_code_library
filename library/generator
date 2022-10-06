@@ -6,7 +6,7 @@ advanced iterators
 - Contains 'yield'-statements for returning values instead of 'return'-statement
 - Remembers last executed 'yield'-command and starts thereafter for the next iterator-call
 
-EXAMPLES
+EXAMPLE
 def abc_generator():
     yield("a")
     yield("b")

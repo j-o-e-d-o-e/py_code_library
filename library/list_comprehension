@@ -4,7 +4,7 @@ advanced loops
 
 Shortcut for loops. Returns a <list.
 
-EXAMPLES
+EXAMPLE
 #list comprehension with if-statement:
 even_squares = [x ** 2 for x in range (1,12) if x % 2 == 0] 
 #prints: [4, 16, 36, 64, 100]

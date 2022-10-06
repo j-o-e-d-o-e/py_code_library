@@ -13,7 +13,7 @@ data structures
 - 'dict.get(key,default)' returns the value for 'key' if 'key' is in the dictionary, else 'default'
 - 'a = dict.copy()' copies dict (cloning). aliasing: a = dict
 
-EXAMPLES
+EXAMPLE
 d = {'a': 'apple', 'b': 'berry', 'c': 'cherry'}
 
 for key in d:
