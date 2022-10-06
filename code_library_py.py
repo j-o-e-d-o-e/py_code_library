@@ -17,41 +17,58 @@ def setup_lib():
 
 
 def print_toc(lib):
-    print("PYTHON CODE LIBRARY".center(80, "="))
-    toc = []
+    print(ansi_format(" PYTHON CODE LIBRARY ".center(60, "="), bold=True))
     for entry in lib:
-        temp = [str((lib.index(entry) + 1)) + " - " + entry["title"]]
-        if entry["tags"]:
-            temp.append("->(" + str((lib.index(entry) + 1)) + ") " + entry["tags"])
-        toc.append(temp)
-    col_width = max(len(word) for row in toc for word in row) - 6
-    for row in toc:
-        print("".join(word.ljust(col_width) for word in row))
+        i = lib.index(entry) + 1
+        tmp = " " if i < 10 else ""
+        tmp = tmp + str(i) + " - " + entry["title"] + " " * (35 - len(entry["title"])) + entry["tags"]
+        print(ansi_format(tmp, color=CYAN if i % 2 == 0 else GREEN, color_bg=i % 2 == 0))
 
 
 def print_entry(lib, num):
-    print("\n----------------------------------------")
-    print(str(num) + " - " + str(lib[num - 1]["title"]) + "\n")
+    print(ansi_format("\n----------------------------------------"))
+    color = GREEN if not num % 2 == 0 else CYAN
+    print(ansi_format(str(num) + " - " + str(lib[num - 1]["title"]) + "\n", color=color, bold=True, underline=True))
     for line in lib[num - 1]["body"]:
-        print(line.replace("\n", ""))
-    print("----------------------------------------")
-    print("----------------------------------------")
+        if line == "EXAMPLE\n":
+            print(ansi_format(line.replace("\n", ""), color=color, bold=True))
+        else:
+            print(ansi_format(line.replace("\n", ""), color=color))
+    print(ansi_format("----------------------------------------"))
+
+
+ANSI_ESC = "\033["
+RED = 91  # text colors
+GREEN = 32
+CYAN = 96
+BLACK = 40  # background color
+
+
+def ansi_format(txt, color=RED, color_bg=False, bold=False, underline=False):
+    tmp = ANSI_ESC + str(color)
+    if color_bg:
+        tmp = tmp + ";" + str(BLACK)
+    if bold:
+        tmp = tmp + ";1"
+    if underline:
+        tmp = tmp + ";4"
+    return tmp + "m" + txt + ANSI_ESC + "0m"
 
 
 def main():
     lib = setup_lib()
     print_toc(lib)
-    user_input = None
     while True:
         try:
-            user_input = int(input("\nWhat would you like to read? "))
+            user_input = int(input(ansi_format("\nWhat would you like to read? ")))
         except ValueError:
-            print("No valid input.")
+            print(ansi_format("No valid input."))
             continue
         if user_input == 0:
             print("\n")
             print_toc(lib)
         elif user_input == 667:
+            print(ansi_format("Devil's neighbour wishes you a good day."))
             break
         else:
             print_entry(lib, user_input)
