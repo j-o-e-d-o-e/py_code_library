@@ -2,9 +2,22 @@ class
 
 
 
-- 'class Name(object)' declares a class 'Name' which inherits from object
-- 'instance = class()' creates a new instance of that class
-- 'instance.method()' invokes a method on object. Declared with 'self' as parameter
-- 'class.method()' invokes a static method. Declared without 'self'
-- 'instance.attribute' accesses the defined attribute of that instance
-- 'from filename import classname' imports classes from other files
+- constructor __init__
+- method __str__
+    - if not set, string representation of obj is used
+    - e.g. <__main__.Human object at 0x7f12da85ab90>
+
+EXAMPLE
+class Human:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def introduce(self):
+        print("Hi there, I am " + self.__str__())
+
+    def __str__(self):
+        return f"{self.name}, {self.age} years old"
+
+mary = Human("Mary", 36)
+mary.introduce()  # Hi there, I am Mary, 36 years old

@@ -1,8 +1,8 @@
-assertion
+assert
 
 debugging
 
-- 'assert'-statement makes sure that a specific condition holds true
+- 'assert' makes sure that a specific condition holds true
 - if not, execution halts and AssertionError is raised
 
 EXAMPLE

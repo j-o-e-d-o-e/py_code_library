@@ -48,7 +48,7 @@ def print_entry(entry):
 
 ANSI_ESC = "\033["
 RED = 91  # text colors
-GREEN = 32
+GREEN = 92
 CYAN = 96
 BLACK = 40  # background color
 

@@ -1,6 +1,68 @@
 asterisk
 
-*
+destructing operator
 
-- '*' applies each element of an iterable as a separate argument to a function/method
-- shortcut for converting, e.g. tuples to ints
+- in conjunction with funcs
+    (1) single asterisk to assign
+        - multiple vals to a single tuple as an arg of a func (1.1)
+        - elems of an iterable/tuple to multiple args of a func (1.2)
+    (2) double asterisk to assign
+        - multiple keyword-value-pairs to a single dict (2.1)
+        - vals of a dictionary to multiple args (2.2)
+- in conjunction with iterables
+    (3) single asterisk to assign
+        - multiple vals to a single list (3.1)
+        - elems of a list to multiple vars (3.2)
+            - useful e.g. to extract 1st and last elem
+    (4) double asterisk to assign
+        - multiple vals (keyword-args/dicts) to a single dict (4.1)
+        - vals of a dict to multiple vars (4.2)
+
+- SEE ALSO
+    - /bas.codes/posts/python-asterisks
+
+EXAMPLE
+(1.1)
+def add(*nums):
+    sum = 0
+    for num in nums:
+        sum += num
+    return sum
+
+add(1, 2, 3, 4)  # 10
+(1.2)
+def add(num1, num2, num3):
+    return num1 + num2 + num3
+
+ls = [1, 2, 3]
+add(*ls)  # 6
+
+(2.1)
+def to_dict(**kwargs):
+    for keyword in kwargs:
+        print(f"{kwargs[keyword]} is a {keyword}")
+
+to_dict(cat="minka", clown="joe", veggie="tomato")
+(2.2)
+def to_dict(cat, clown, veggie):
+    print(f"{cat} likes {clown}'s {veggie}")
+
+dict = {'cat': 'minka', 'clown': 'joe', 'veggie': 'tomato'}
+to_dict(**dict)  # minka likes joe's tomato
+
+(3.1)
+ls1 = [1, 2, 3]
+ls2 = [10, 20, 30]
+a = 42
+merged = [*ls1, a, *ls2]  # [1, 2, 3, 42, 10, 20, 30]
+(3.2)
+ls = [1, 2, 3, 4, 5]
+a, *b, c = ls  # 1 [2, 3, 4] 5
+
+(4.1)
+dict = {'cat': 'minka', 'clown': 'joe'}
+merged = { **dict, 'veggie': 'tomato'}
+# {'cat': 'minka', 'clown': 'joe', 'veggie': 'tomato'}
+(4.2)
+dict = {'cat': 'minka', 'clown': 'joe', 'veggie': 'tomato'}
+a, *b = dict  # cat ['clown', 'veggie']
