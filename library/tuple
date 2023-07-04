@@ -1,6 +1,6 @@
-tuples()
+tuple
 
-data structures
+data structure
 
 - immutable, very much like strings
 - concatenation possible

@@ -1,18 +1,17 @@
-assertions
+assertion
 
 debugging
 
-- 'assert'-statements make sure that a specific condition holds true
-- If not, execution halts and AssertionError is raised
+- 'assert'-statement makes sure that a specific condition holds true
+- if not, execution halts and AssertionError is raised
 
 EXAMPLE
+(1)
 door = "open"
-assert door == "open" #first 'assert' goes fine
+assert door == "open"  # first 'assert' goes fine
 door = "I'm sorry, Dave. I'm afraid I can\'t do that."
-assert door == "open"
-#raises assertion error
+assert door == "open"  # raises assertion error
 
-#to make sure a list isn't empty:
-a = []
-assert not(len(a)) == 0, "list is empty"
-#prompts: (...) AssertionError: list is empty
+(2)
+a = []  # to make sure a list isn't empty
+assert not (len(a)) == 0, "list is empty"  # AssertionError: list is empty

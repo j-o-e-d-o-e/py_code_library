@@ -1,8 +1,9 @@
-_underscore_
+underscore
 
 
 
-'Underscores' are used to indicate "throwaway"-variables, which are of no further interest. This is merely a convention, the 'underscore' still gets a value assigned.
+- to indicate "throwaway"-variables, which are of no further interest
+- merely a convention: 'underscore' still gets a value assigned
 
 EXAMPLE
 a=(1,2,3,4)

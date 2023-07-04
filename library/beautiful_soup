@@ -1,6 +1,6 @@
-beautiful soup
+lib->beautiful soup
 
-3rd party module, extracting from HTML
+extracting from HTML
 
 bs4 pulls data out of HTML and XML files. Its methods are used to locate specific parts of an HTML document.
 

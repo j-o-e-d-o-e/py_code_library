@@ -1,6 +1,6 @@
-'with' for opening files
+with
 
-
+for opening files
 
 Shortcut. Instead of using open() AND close()
 

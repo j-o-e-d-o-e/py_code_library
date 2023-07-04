@@ -1,6 +1,6 @@
-lists[]
+list
 
-data structures
+data structure
 
 - mutable collections
 - pop() pops the last item off the stack and returns its value

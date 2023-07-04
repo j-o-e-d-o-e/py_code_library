@@ -1,8 +1,8 @@
-cloning[:]
+cloning
 
-for lists
+[:] for lists
 
-- Creates a new list and copy every element in the list
+- creates a new list and copy every element in the list
 - Unlike aliasing: a_list = b_list passes a reference of the same object to the new variable (a_list)
 
 EXAMPLE

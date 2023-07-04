@@ -1,0 +1,11 @@
+lib->paperclip
+
+copy/paste
+
+- saves to clipboard
+
+EXAMPLE
+import pyperclip
+
+pyperclip.copy("Helloooooo!!!!")
+pyperclip.paste() #prompts: 'Helloooooo!!!!'

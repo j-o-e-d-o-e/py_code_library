@@ -1,15 +1,9 @@
-error messages
+error
 
+messages and their meanings
 
 - 'IndexError': trying to access beyond the limits of a list
-
-EXAMPLE
-test = [1,2,3]
-test[4]
 - 'TypeError': trying to convert an inappropriate type or mixing data types without appropriate coercion
-
-int(test) or
-"3"/4
 - 'ValueError': operand type okay, but value is illegal
 - 'Name Error': referencing a non-existent variable
 - 'Syntax error': forgetting to close parenthesis, quotation, etc.

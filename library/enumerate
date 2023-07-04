@@ -1,8 +1,9 @@
-enumerate(iterable, start=0)
+enumerate
 
 build-in function
 
-Returns an enumerate object, a tuple containing a count and the value from iterating over the iterable
+- enumerate(iterable, start=0)
+- returns an enumerate object, a tuple containing a count and the value from iterating over the iterable
 
 EXAMPLE
 list(enumerate("babara"))

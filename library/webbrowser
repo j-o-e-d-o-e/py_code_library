@@ -1,6 +1,6 @@
 webbrowser
 
-opens webpages in scripts
+- opens webpages in scripts
 
 webbrowser.open() opens a new tab to the named URL
 

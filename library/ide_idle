@@ -1,0 +1,17 @@
+ide->idle
+
+
+(1) help()
+    - if arg given, string is looked up and a help page printed
+    - if no arg, interactive starts
+(2) dir()
+    - if arg given, returns list of valid attributes for that obj
+    - if no arg, returns list of names in the current local scope
+
+EXAMPLE
+(1)
+help(list) #prompts elaborate list about all methods of the class 'list'
+
+help(str.join) #prompts infos only about the 'join'-method
+(2)
+dir(list) #returns briefly all methods/attributes of 'list'
