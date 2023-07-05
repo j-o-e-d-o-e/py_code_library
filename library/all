@@ -1,6 +1,6 @@
 all
 
-build-in function
+built-in func
 
 - returns True if all elems of an iterable are true
 

@@ -1,14 +1,19 @@
 copy
 
-for lists/dicts, from copy
+built-in module
 
-copy.copy makes a duplicate copy of a mutable value like a list or dictionary, not just a copy of a reference. deepcopy() copies inner lists as well.
+(1) copy() returns a shallow copy (1st level copied, deeper levels referenced)
+(2) deepcopy() returns a copy including all levels
 
 EXAMPLE
-"""to make changes to a list without modifying the original list"""
 import copy
-spam = ["a", "b", "c", "d", "e"]
-cheese = copy.copy(spam)
-cheese[1] = 42
-spam # prints ['a', 'b', 'c', 'd', 'e']
-cheese # prints ['a', 42, 'c', 'd', 'e']
+(1)
+ls1 = [["a", "b"], "c"]
+ls2 = copy.copy(ls1)
+ls2[1] = 'X'
+ls2[0][0] = 'Y'     # ls1 = [['Y', 'b'], 'c']
+                    # ls2 = [['Y', 'b'], 'X']
+(2)
+ls2 = copy.deepcopy(ls1)
+ls2[0][1] = 'Z'     # ls1 = [['Y', 'b'], 'c']
+                    # ls2 = [['Y', 'Z'], 'c']

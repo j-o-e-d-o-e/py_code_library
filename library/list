@@ -1,19 +1,15 @@
 list
 
-data structure
 
-- mutable collections
-- pop() pops the last item off the stack and returns its value
-- remove(x) removes the first occurrence of 'x'
-- del() deletes element at a specific index
-- list(s) converts string to list
-- join() turns a list of characters into a string
+
+- methods
+    - pop() pops the last item off the stack and returns its value
+    - remove() removes the first occurrence of given arg
+    - del() deletes element at a specific index
+    - list() converts given string to list
 
 EXAMPLE
-a = [2,1,0,3]
-del(a[2])
-a #prompts: [2, 1, 3]
-
-l = ["a","b","c"]
-"".join(l)
-#prompts: "abc"
+ls = [2, 1, 0, 3]
+del (ls[2])  # [2, 1, 3]
+ls.pop()  # [2, 1]
+ls.remove(2)  # [1]

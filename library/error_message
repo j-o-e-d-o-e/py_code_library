@@ -1,6 +1,6 @@
 error
 
-messages and their meanings
+
 
 - 'IndexError': trying to access beyond the limits of a list
 - 'TypeError': trying to convert an inappropriate type or mixing data types without appropriate coercion

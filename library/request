@@ -1,16 +1,17 @@
 lib->requests
 
-3rd party module, http
+HTTP client
 
-- requests.get() takes a string of a URL to download
-- raise_for_status() checks if download succeeded and raises an exception if error occurred during download
+- requests.get() sends a GET request
+    - 1st arg: url
+    - 2nd arg: params as dict (optional)
+
+- SEE ALSO
+    - requests.readthedocs.io
 
 EXAMPLE
 import requests
 
-res = requests.get('https://automatetheboringstuff.com/files/rj.txt')
-try:
-    res.raise_for_status() #or: res.status_code == requests.codes.ok
-except Exception as exc:
-    print('There was a problem: %s' % (exc))
-print(res.text[:250])
+URL = "https://j-o-e-d-o-e.github.io/traffic-tracker"
+resp = requests.get(URL)
+print(resp.status_code)  # 200

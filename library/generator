@@ -1,48 +1,38 @@
 generator
 
-advanced iterators
 
-- Create/generates specific iterators
-- Contains 'yield'-statements for returning values instead of 'return'-statement
-- Remembers last executed 'yield'-command and starts thereafter for the next iterator-call
+
+- func containing 'yield'
+- remembers last executed 'yield' and starts thereafter for next iterator-call
+- next(generator)/generator.__next__() returns next item    
 
 EXAMPLE
-def abc_generator():
-    yield("a")
-    yield("b")
-
-test = abc_generator()
-test.__next__() #prompts: "a"
-test.__next__() #prompts: "b"
-test.__next__() #prompts: StopIteration
-
-
-def genPrimes():
-    primes = [2]
+(1)
+def primes():
+    cache = []
     n = 2
     while True:
-        if n == 2:
-            yield 2
-        if all(n % p != 0 for p in primes):
-            newPrime = n
-            primes.append(n)
-            yield newPrime
-        n+=1
+        if all(n % p != 0 for p in cache):
+            cache.append(n)
+            yield n
+        n += 1
 
-test = genPrimes()
-next(test) #prompts: 2
-next(test) #prompts: 3
-next(test) #prompts: 5
-
-
-def permutations(items):
-    n = len(items)
-    if n==0: yield []
+generator = primes()
+next(generator)
+generator.__next__()
+print(next(generator))  # 3rd prime: 5
+(2)
+def permute(ls):
+    if len(ls) == 0:
+        yield []
     else:
-        for i in range(len(items)):
-            for j in permutations(items[:i]+items[i+1:]):
-                yield [items[i]]+j
+        for index in range(len(ls)):
+            for sublist in permute(ls[:index] + ls[index + 1:]):
+                yield [ls[index]] + sublist
 
-for i in permutations(["r","e","d"]):
-	print("".join(i) + ", ", end="")
-#prints: red, rde, erd, edr, dre, der, 
+generator = permute("red")
+print(generator.__next__())             # ['r', 'e', 'd']
+print(next(generator))                  # ['r', 'd', 'e']
+
+for res in generator:
+    print("".join(res) + ", ", end="")  # erd, edr, dre, der,

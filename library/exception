@@ -1,29 +1,15 @@
 exception
 
-try/except/finally
 
-- exceptions raised by any statement in the body of 'try' are handled by the 'except'-statement
-- execution continues after the body of the 'except'-statement
-- optional statement of error type in 'except'-statement
-- 'else'-statement is executed when execution of associated 'try'-body completes with no exceptions
-- 'finally'-statement is always executed after 'try', 'else' and 'except' clauses, even if they raised an error or executed a 'break', 'continue' or 'return'
+
+- else-body is executed if no exception was raised
 
 EXAMPLE
 try:
-    guess = int(input("Guess a number: "))
+    num = int(input("Guess a num: "))
 except ValueError:
-    print ("Could not convert to a number")
-except:
-    print("Something went wrong!")
+    print("Could not convert to a num")
 else:
-    print("Guess = %s" %guess)
+    print("Correct input: %s" % num)
 finally:
-    print("Final.")
-
-while True:
-    try:
-        n = int(input("Enter integer: "))
-        break
-    except ValueError:
-        print("Incorrect, try again.")
-print("Correct input: %s" %n)
+    print("Done.")

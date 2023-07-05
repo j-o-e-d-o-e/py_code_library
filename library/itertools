@@ -1,17 +1,26 @@
 itertools
 
-module, building iterators
+built-in module
 
--islice(iterable, start, stop[, step]) returns selected elements from the iterable
--permutations(iterable) returns permutations of elements in the iterable
+for creating/using iterators
+    (1) islice(iterable, start, stop[, step])
+        - returns iterator whose next() method returns selected values from an iterable
+        - if start is specified, will skip all preceding elements
+            - otherwise, defaults to zero
+        - if step is specified, determines how many vals are skipped between successive calls
+            - otherwise, defaults to 1
+        -  works like a slice() on a list but returns an iterator
+    (2) permutations(iterable, len)
+        - returns successive permutations of elems in the iterable
+        - if len is specified, determines length of each permutation result
+            - otherise, defaults to length of iterable
 
 EXAMPLE
-import itertools
+import itertools as iter
 
-text = "fulminanz"
-tranche = list(itertools.islice(text,2,8))
-#prints: ['l', 'm', 'i', 'n', 'a', 'n']
+text = "joe doe"
+slice = list(iter.islice(text, 2, 8))
+print(slice)  # ['e', ' ', 'd', 'o', 'e']
 
-perms = itertools.permutations(["r","e","d"])
-list(perms)
-#prints: [('r', 'e', 'd'), ('r', 'd', 'e'), ('e', 'r', 'd'), ('e', 'd', 'r'), ('d', 'r', 'e'), ('d', 'e', 'r')]
+ls = list(iter.permutations(["r", "e", "d"], 2))
+print(ls)  # [('r', 'e'), ('r', 'd'), ('e', 'r'), ('e', 'd'), ('d', 'r'), ('d', 'e')]

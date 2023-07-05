@@ -1,15 +1,35 @@
 lib->selenium
 
-3rd party module, webscraping
+webscraping
 
-- 'webdriver.Firefox()'/'webdriver.Chrome()' creates WebDriver-'instance' and starts respective browser displaying blank page
-- 'geckodriver'/'chromedriver' needs to be installed for Firefox/Chrome
-- 'browser.get(URL)' directs WebDriver-object to specified URL
-- 'browser.find_element_*'/'browser.find_elements_*' find element(s) and return WebElement-object(s)
-- 'browser.refresh()' clicks the Refresh/Reload-button
-- 'browser.quit()' clicks the Close-Window-button
-- 'WebElement.text' displays its text-attribute
-- 'WebElement.clear()' clears the text
-- 'WebElement.send_keys("input")' inputs text
-- 'WebElement.click()' clicks the WebElement-object
-- Further info: http://selenium-python.readthedocs.io
+- constructor Firefox()/Chrome()
+    - returns WebDriver instance and starts respective browser
+- methods on webdriver, e.g.
+    - get(URL) directs to specified URL
+    - find_element()/find_elements() find element(s) and return WebElement obj(s)
+        - 1st arg: selector, e.g. By.NAME
+        - 2nd arg: string
+    - refresh() clicks virtually refresh-button
+    - quit() closes current window
+- methods on webelement, e.g.
+    - text() displays its text
+    - clear() clears its text
+    - send_keys("input") simulates typing into this elem
+    - click() simulates clicking this elem
+
+- SEE ALSO
+    - selenium-python.readthedocs.io
+
+EXAMPLE
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+
+driver = webdriver.Firefox()
+driver.get("http://www.wikipedia.org")
+elem = driver.find_element(By.ID, "searchInput")
+print(elem)
+elem.send_keys("the long dark")
+elem.send_keys(Keys.RETURN)
+input()
+driver.close()

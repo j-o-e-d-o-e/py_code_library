@@ -1,17 +1,22 @@
 datetime
 
-module, manipulating dates/times
+built-in module
 
--datetime() returns a datetime-object. Year, month and day are required
--datetime.now() returns the current local date and time as a datetime-object
--datetime.isocalendar(datetime.now()) returns 3-tuple containing ISO year, week number, and weekday
+- constructor datetime()
+    - datetime(year, month, day, hour, min, sec, microsec, tzinfo)
+    - year, month and day required
+    - remaining args may be ints
+    - tzinfo (timezone) may be None, or an instance of a tzinfo subclass
+- datetime.now() returns datetime-obj with current local date and time
+- datetime.isocalendar() returns a named tuple containing ISO year, week number, and weekday
 
 EXAMPLE
 from datetime import datetime
 
-# '*' applies each element of an iterable as a separate argument
-date1 = (1999, 9, 19) #tuples
-date2 = (1999, 9, 22)
-delta = datetime(*date1) - datetime(*date2)
-print(delta.days)
-#prints: -3
+d = datetime(1982, 3, 1)        # 1982-03-01 00:00:00
+now = datetime.now()            # 2023-07-05 13:45:39.544655
+n = datetime.isocalendar(now)   # datetime.IsoCalendarDate(year=2023, week=27, weekday=3)
+
+d1 = (1999, 9, 19)
+d2 = (1999, 9, 22)
+delta = datetime(*d2) - datetime(*d1)  # 3

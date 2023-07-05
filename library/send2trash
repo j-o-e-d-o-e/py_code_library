@@ -1,8 +1,11 @@
 lib->send2trash
 
-3rd party module, delete files/folders
 
-Sends folders and files to computer's trash bin instead of permanently deleting them
+
+- sends folders/files to computer's trash bin instead of permanently deleting them
+
+- SEE ALSO
+    - pypi.org/project/Send2Trash/
 
 EXAMPLE
 import send2trash

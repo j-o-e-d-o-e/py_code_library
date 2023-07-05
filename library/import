@@ -2,13 +2,19 @@ import
 
 
 
-- import 'module' OR
-- from 'module import 'function' as 'name'
+to import modules
+    (1) import 'module'
+    (2) from 'module import 'function' as 'name'
 
 EXAMPLE
-from datetime import datetime as d
+(1)
+import copy
 
-my_b = d(1999,9,9)
-tdy = d.today()
-delta = tdy - my_b
-print(delta.days)
+a = copy.copy([1, 2, 3])
+(2)
+from datetime import datetime as dt
+
+millennium = dt(2000, 1, 1)
+today = dt.today()
+delta = today - millennium
+print(f"{delta.days} days passed since millennium.")

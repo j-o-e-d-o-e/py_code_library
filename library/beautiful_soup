@@ -1,10 +1,25 @@
 lib->beautiful soup
 
-extracting from HTML
+HTML/XML parser
 
-bs4 pulls data out of HTML and XML files. Its methods are used to locate specific parts of an HTML document.
+- 3rd party module to extract data from HTML/XML files
 
-- bs4.BeautifulSoup('string containing the HTML') parses an HTML file and returns a bs-object
-- 'bs_object'.select('CSS selector') retrieves a web page element and returns a list of 'tag'-objects
-- 'bs_object'.get('string of an attribute') accesses attribute values from an element and returns the attribute's value
-- 'tag'-values can be passed to the str() function to show their HTML tags
+- constructor bs4.BeautifulSoup()
+    - 1st arg: string or file-like obj
+    - many optional args ...
+    - parses 1st arg and returns bs_obj
+- methods on bs_obj
+    - finds(name) finds an elem by its name
+    - get(key) returns val of the key attribute for the tag
+- made by Leonard Richardson, author of Restful Webservices
+
+EXAMPLE
+import requests
+from bs4 import BeautifulSoup
+
+URL = "https://j-o-e-d-o-e.github.io/traffic-tracker"
+page = requests.get(URL)
+
+soup = BeautifulSoup(page.content, "html.parser")
+res = soup.find("title")
+print(res.text)  # TrafficTracker

@@ -1,10 +1,12 @@
 enumerate
 
-build-in function
+build-in func
 
-- enumerate(iterable, start=0)
-- returns an enumerate object, a tuple containing a count and the value from iterating over the iterable
+- adds counter to an iterable and returns it
+- 1st arg: iterable
+- 2nd arg: initial val of counter (optional)
+    - if not given, defaults to zero
 
 EXAMPLE
-list(enumerate("babara"))
-#prompts: [(0, 'b'), (1, 'a'), (2, 'b'), (3, 'a'), (4, 'r'), (5, 'a')]
+for count, value in enumerate("abc", 100):
+    print(count, value, end=" ")  # 100 a 101 b 102 c

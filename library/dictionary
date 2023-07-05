@@ -1,47 +1,51 @@
 dictionary
 
-data structures
 
-- stores pairs of data {"key": "value"}
-- values can be of any type
-- keys must be unique & immutable (int, float, string, tuple, bool)
+
+- stores key-value-pairs
+    - keys must be unique & immutable: int, float, string, tuple, bool
+    - vals may be of any type
 - no guaranteed order
-- 'dict[key] = value' adds new pair of data to the dict
-- 'dict[key]' returns particular value associated to that key
-- 'del(dict[key])' removes the value to that key in the dict
-- 'dict.items()', 'dict.keys()' and 'dict.values()' return iterables
-- 'dict.get(key,default)' returns the value for 'key' if 'key' is in the dictionary, else 'default'
-- 'a = dict.copy()' copies dict (cloning). aliasing: a = dict
+(1) add: dict[key] = val
+(2) retrieve
+    - 'dict[key]' returns val for given key
+    - 'dict.get(key, default)' returns val for given key if key is in dict, else default
+(3) in-operator checks whether dict contains key/val
+(4) remove: del(dict[key])
+(5) iterables
+    - 'dict.items()' returns list of key-val-pairs
+    - 'dict.keys()' returns list of keys
+    - 'dict.values()' returns list of vals
 
 EXAMPLE
-d = {'a': 'apple', 'b': 'berry', 'c': 'cherry'}
+dict = {1: 'apple', 2: 'berry'}
+(1)
+dict[3] = "cherry"
+(2)
+# print(d[0])  # KeyError
+print(dict.get(0, "apple"))  # apple
+(3)
+print(1 in dict)  # True
+print("apple" in dict.values())  # True
+(4)
+del [dict[3]]
+(5)
+for item in dict.items():
+    print(item, end=" ")  # (1, 'apple') (2, 'berry')
 
-for key in d:
-    print (key, d[key], end=" ")
-#prints: a apple b berry c cherry
+for key in dict:
+    print(key, dict[key], end=" ")  # 1 apple 2 berry
 
-"a" in d
-#prompts: True
+for key in dict.keys():
+    print(key, end=" ")  # 1 2
 
-"apple" in d.values()
-#prompts: True
+for val in dict.values():
+    print(val, end=" ")  # apple berry
 
-d.items()
-#prompts: dict_items([('a', 'apple'), ('b', 'berry'), ('c', 'cherry')]) 
-
-d.keys()
-#prompts: dict_keys(['a', 'b', 'c'])
-
-d.values()
-#prompts: dict_values(['apple', 'berry', 'cherry'])
-
-d = {}
+dict = {}
 for word in "She loves you yeah yeah yeah".split():
-	if word in d:
-		d[word] +=1
-	else:
-		d[word] = 1
-d #prompts: {'She': 1, 'yeah': 3, 'loves': 1, 'you': 1}
-
-d.get('e', 0)
-#prompts: 0 (instead of Error)
+    if word in dict:
+        dict[word] += 1
+    else:
+        dict[word] = 1
+print(dict)  # {'She': 1, 'loves': 1, 'you': 1, 'yeah': 3}

@@ -1,56 +1,42 @@
 lambda
 
-advanced functions
 
-Lambda as a shortcut to create an anonymous functions.
-- 'return'-statement implicitly included
-- filter(), map() and reduce() are combinable with lambda. All three expect two arguments: 'function' & 'iterable'. Each returns a new iterable
+
+- shortcut for anonymous funcs
+    - have single statement which implicitly returns val
+        - if more are needed, define separate func
+    - may be assigned to var (1)
+    - may be invoked directly (2)
+- funcs with with lambda as arg
+    (3) filter(lambda elem: predicate, iterable)
+        - returns iterator yielding those elems of iterable for which predicate is True
+        - if predicate is None, return elems that are True
+    (4) map(lambda elem: func, iterable)
+        - applies func to each elem of iterable and returns iterator
+    (5) reduce(lambda elem: func, iterable, initial)  
+        - applies func of two args cumulatively to elems of iterable, from left to right
+        - returns single val
+        - requires import of module 'functools'
 
 EXAMPLE
-f = lambda x: x*2 #works also with parenthesis: f = (lambda x: x*2)
-f(3) #prompts: 6
+(1)
+func = lambda x, y: x + y
+print(func(1, 2))  # 3
+(2)
+for i in range(3):
+    print((lambda x: x + 42)(i))  # 42 43 44
+(3)
+words = "Hi, there!".split()
+res = list(filter(lambda w: len(w) > 3, words))
+print(res)  # ['there!']
+(4)
+a = [1, 2, 3, 4]
+b = [17, 12, 10]
+c = [-1, -4, 9]
+x = list(map(lambda x, y, z: {"*": x * y * z, "+": x + y + z}, a, b, c))
+print(x)  # [{'*': -17, '+': 17}, {'*': -96, '+': 10}, {'*': 270, '+': 22}]
+(5)
+import functools as ft
 
-g = lambda x,y: x + y
-g(1,2) #prompts: 3
-
-#using lambda without assigning the return-value to a variable:
-(lambda x: x*2)(3) #also prompts: 6
-
-#lambda without variable & with argument at the end:
-for i in range(10):
-	(lambda x: x + 42)(i) #prompts: 42,43,44,...,51
-------------------------------------------------------------
-my_list = range(16) # contains [0-15]
-
-print (list(filter(lambda x: x % 3 == 0, my_list)))
-#function(lambda 'listelement': 'if-condition', 'source')
-#prompts: [0, 3, 6, 9, 12, 15]
-
-#'map' applies the function (x*2+10) to all elements of 'my_list':
-print (list(map(lambda x: x * 2 + 10, my_list))) #convert to list
-#prompts: [10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40]
-
-words = "It seems to be a good task".split()
-#prints: ['It', 'seems', 'to', 'be', 'a', 'good', 'task']
-lengths = list(map(lambda w: len(w), words))
-#prints: [2, 5, 2, 2, 1, 4, 4]
-
-#for reduce() import of 'functools' necessary:
-import functools
-functools.reduce(lambda x,y: x+y, [47,11,42,13])
-#prompts: 113
-------------------------------------------------------------
-#using lambda on three iterables:
-a = [1,2,3,4]
-b = [17,12,11,10]
-c = [-1,-4,5,9]
-x = map(lambda x,y,z: x+y+z, a,b,c)
-list(x) #prompts: [17, 10, 19, 23]
-------------------------------------------------------------
-#returning a 2-tuple containing ([0],[2]*[3]) from nested list 'orders':
-orders = [ ["34587","Learning Python, Mark Lutz", 4, 40.95], 
-	   ["98762","Programming Python, Mark Lutz", 5, 56.80], 
-           ["77226","Head First Python, Paul Barry",3,32.95]]
-
-invoice_totals = list(map(lambda x: (x[0],x[2] * x[3]), orders))
-#prints: [('34587', 163.8), ('98762', 284.0), ('77226', 98.85000000000001)]
+res = ft.reduce(lambda x, y: x + y, [1, 2, 3], 4)
+print(res)  # 10

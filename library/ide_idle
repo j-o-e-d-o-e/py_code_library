@@ -1,6 +1,7 @@
 ide->idle
 
 
+
 (1) help()
     - if arg given, string is looked up and a help page printed
     - if no arg, interactive starts
