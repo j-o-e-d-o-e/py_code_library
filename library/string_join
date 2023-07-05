@@ -1,0 +1,11 @@
+string->join
+
+
+
+- join(iterable) concatenate any number of strings
+    - string on which join() is called is inserted in between each given string
+    - returns new string
+
+EXAMPLE
+spam = ["cats", "dogs", "mice"]
+print(" ".join(spam))  # cats dogs mice
