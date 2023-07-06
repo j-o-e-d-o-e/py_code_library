@@ -1,0 +1,42 @@
+list->funcs
+
+filter, map, reduce
+
+(1) filter(func, iterable)
+    - returns iterator yielding those elems of iterable for which func returns True
+    - if func is None, returns elems that are True
+(2) map(func, iterables)
+    - applies func to each elem of the given iterable and returns iterator
+    - may have multiple iterables
+(3) reduce(func, iterable, initial)  
+    - applies func of two args cumulatively to elems of iterable, from left to right
+    - returns single val
+    - requires import of module 'functools'
+
+- SEE ALSO
+    - entry: lambda
+
+EXAMPLE
+(1)
+words = "Hi, there!".split()
+res = list(filter(lambda w: len(w) > 3, words))
+print(res)  # ['there!']
+
+res = list(filter(None, words))
+print(res)  # ['Hi,', 'there!']
+(2)
+a = [1, 2, 3, 4]
+b = [17, 12, 10]
+c = [-1, -4, 9]
+x = list(map(lambda x, y, z: {"*": x * y * z, "+": x + y + z}, a, b, c))
+print(x)  # [{'*': -17, '+': 17}, {'*': -96, '+': 10}, {'*': 270, '+': 22}]
+
+ls1 = [1, 28, 36]
+ls2 = [2, 57, 9]
+for i in map(min, ls1, ls2):
+    print(i, end=" ")  # 1 28 9
+(3)
+import functools as ft
+
+res = ft.reduce(lambda x, y: x + y, [1, 2, 3], 4)
+print(res)  # 10

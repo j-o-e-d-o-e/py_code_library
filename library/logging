@@ -1,36 +1,32 @@
 logging
 
-debugging
+built-in module
 
-Instead of using multiple 'print'-expressions for debugging Easier to use.
-
-- logging.debug() prints log information
-- logging.disable(logging.CRITICAL) disables log messages
-- logging levels: DEBUG, INFO, WARNING, ERROR and CRITICAL
-- logging.debug(), logging.info(), logging.warning(), logging.error() or logging.critical() shows the according message
-- If logging level set to CRITICAL, only CRITICAL messages are shown. If set to DEBUG, all messages are shown
+methods on logger
+    - basicConfig() configures obj
+        - if level is set, only messages on this level and above are shown
+            - hierarchy of levels: DEBUG -> INFO -> WARNING -> ERROR -> CRITICAL 
+    - debug()/info()/warning()/error()/critical() display message for each level
+    - disable(level) disables messages for specified level
 
 EXAMPLE
-import logging
+import logging as log
 
-logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s - %(levelname)s - %(message)s')
+log.basicConfig(level=log.INFO, format=' %(asctime)s - %(levelname)s - %(message)s')
+
 
 def factorial(n):
-    logging.debug('Start of factorial(%s)' % (n))
-    total = 1
-    for i in range(n + 1):#should be 'for i in range(1, n + 1):'
-        total *= i
-        logging.debug('i is ' + str(i) + ', total is ' + str(total))
-    logging.debug('End of factorial(%s)' % (n))
-    return total
+    log.warning('Start of factorial(%s)' % n)
+    res = 1
+    for i in range(1, n + 1):
+        res *= i
+        log.info('i = ' + str(i) + ', total = ' + str(res))
+    log.debug('End of factorial(%s)' % n)
+    return res
 
-print(factorial(5))
-logging.debug('End of program')
-
-#prompts possible error, eg that factorial-function starts at '0' instead of '1':
-2016-08-10 23:43:46,076 - DEBUG - Start of factorial(5)
-2016-08-10 23:43:46,094 - DEBUG - i is 0, total is 0
-...
-2016-08-10 23:43:46,144 - DEBUG - End of factorial(5)
-0
-2016-08-10 23:43:46,160 - DEBUG - End of program
+factorial(4)  # 24
+# 2016 - 08 - 10 23: 45:46, 304 - WARNING - Start of factorial(4)
+# 2016 - 08 - 10 23: 45:46, 304 - INFO - i = 1, total = 1
+# 2016 - 08 - 10 23: 45:46, 304 - INFO - i = 2, total = 2
+# 2016 - 08 - 10 23: 45:46, 304 - INFO - i = 3, total = 6
+# 2016 - 08 - 10 23: 45:46, 304 - INFO - i = 4, total = 24

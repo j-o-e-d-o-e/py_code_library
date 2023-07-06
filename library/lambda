@@ -1,42 +1,22 @@
 lambda
 
+anonymous func
 
-
-- shortcut for anonymous funcs
+- (lambda args: statement)
     - have single statement which implicitly returns val
         - if more are needed, define separate func
+    - may have multiple args separated by comma
     - may be assigned to var (1)
     - may be invoked directly (2)
-- funcs with with lambda as arg
-    (3) filter(lambda elem: predicate, iterable)
-        - returns iterator yielding those elems of iterable for which predicate is True
-        - if predicate is None, return elems that are True
-    (4) map(lambda elem: func, iterable)
-        - applies func to each elem of iterable and returns iterator
-    (5) reduce(lambda elem: func, iterable, initial)  
-        - applies func of two args cumulatively to elems of iterable, from left to right
-        - returns single val
-        - requires import of module 'functools'
+
+- SEE ALSO
+    - entry: list->funcs
 
 EXAMPLE
 (1)
 func = lambda x, y: x + y
 print(func(1, 2))  # 3
+
 (2)
 for i in range(3):
     print((lambda x: x + 42)(i))  # 42 43 44
-(3)
-words = "Hi, there!".split()
-res = list(filter(lambda w: len(w) > 3, words))
-print(res)  # ['there!']
-(4)
-a = [1, 2, 3, 4]
-b = [17, 12, 10]
-c = [-1, -4, 9]
-x = list(map(lambda x, y, z: {"*": x * y * z, "+": x + y + z}, a, b, c))
-print(x)  # [{'*': -17, '+': 17}, {'*': -96, '+': 10}, {'*': 270, '+': 22}]
-(5)
-import functools as ft
-
-res = ft.reduce(lambda x, y: x + y, [1, 2, 3], 4)
-print(res)  # 10

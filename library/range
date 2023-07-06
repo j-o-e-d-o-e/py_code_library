@@ -1,0 +1,20 @@
+range
+
+
+
+- creates a sequence of nums
+- range(start, stop, step)
+    - start: inclusive (optional)
+        -  defaults to zero
+    - stop: exclusive (required)
+    - step: defaults to 1 (optional)
+    - returns sequence of nums
+- range(len(list))
+    - to iterate over indices of an iterable
+
+EXAMPLE
+nums = [1, 1, 3]
+sum = 0
+for i in range(len(nums)):
+    sum += nums[i]
+print(sum)  # 5

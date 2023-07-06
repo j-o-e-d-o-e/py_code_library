@@ -1,10 +1,18 @@
 regex
 
-advanced, regular expressions
+built-in module
 
-"regular expressions". Shortcut for pattern matching. from modul regex
+- methods
+    - compile(pattern, flags) creates and returns a pattern obj
+    - search(pattern, str, flags) searches for matches and returns match obj
+    - match(pattern, str, flags) gets the matched strings
+    - findall(pattern, str, flags) returns list of matches
 
-- compile() creates & returns a pattern object
-- search() searches for matches  & returns a match object
-- match() gets the matched strings
-- finds all() returns a list of all string matches
+EXAMPLE
+import re
+
+input = 'hello 12 hi 89. Howdy 34'
+pattern = '\d+'
+
+res = re.findall(pattern, input)
+print(res)  # ['12', '89', '34']

@@ -1,0 +1,15 @@
+string->matrix
+
+prettyprint 
+
+- print 2-dimensional-array in aligned fashion
+
+EXAMPLE
+data = [['a', 'b', 'c'], ['aaa', 'b', 'c'], ['a', 'bbb', 'c']]
+
+col_width = max(len(word) for row in data for word in row) + 2
+for row in data:
+    print("".join(word.ljust(col_width) for word in row))
+# a    b    c    
+# aaa  b    c    
+# a    bbb  c

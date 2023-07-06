@@ -1,0 +1,15 @@
+math
+
+
+
+- min()
+    - single iterable as arg: returns its smallest elem (1.1)
+    - two or more args: returns smallest arg (1.2)
+
+EXAMPLE
+(1.1)
+print(min([1, 2, 3]))       # 1
+(1.2)
+print(min(1, 2, 3))         # 1
+
+print(min([3, 4], [1, 2]))  # [1, 2]

@@ -1,0 +1,25 @@
+random
+
+built-in module
+
+- methods
+    - randint(start, end) returns random int in range from start (incl) to end (incl)
+
+EXAMPLE
+import random as rand
+
+random_number = rand.randint(1, 10)
+guesses = 3
+
+while True:
+    guess = int(input("Your guess (1-10): "))
+    if guess == random_number:
+        print("You win!")
+        break
+    else:
+        guesses -= 1
+        if guesses > 0:
+            print(f"Wrong. {guesses} {'guesses' if guesses > 1 else 'guess'} left.")
+        else:
+            print("You lose.")
+            break

@@ -1,27 +1,29 @@
 os
 
-operating system interfaces
+built-in module
 
-provides a portable way of using operating system dependent functionality
-
-- os.chdir("path") changes it
-- os.getcwd() gets 'current working directory'
-- os.listdir("path") return a list of filename strings for each file in the path argument (if '()' in the 'cwd')
-- os.makedirs("path") creates directories
-- os.path.abspath('.') returns the absolute path of the 'cwd'
-- os.path.isfile("path") return True if the path argument exists and is a file
-- os.rmdir('path') deletes empty folder at path (for deleting folder with content, see 'shutil')
-- os.unlink('path') deletes the file at path
-- os.walk('path') walks through the directory tree, touching each file as you go
+- methods
+    - chdir(path) changes current working directory
+    - getcwd() gets current working directory
+    - listdir(path) return a list of filenames in specified dir
+        - if no arg specified, defaults to cwd
+    - makedirs(name) creates directories in cwd
+    - path.abspath(path) returns the absolute path of given path
+        - '.' for cwd
+    - path.isfile(path) returns True if given path exists and is a file
+    - os.rmdir(path) deletes empty folder at given path
+        - for deleting folder with content, see entry: shutil
+    - unlink(path) deletes file at path
+    - walk(path) walks through the directory tree, touching each file
 
 EXAMPLE
-
 import os
-#build paths in a way that works on any operating system
-os.path.join('usr', 'bin', 'spam')
-#->'usr\\bin\\spam'
-# Notice that the backslashes are doubled because each backslash needs to be escaped by another backslash character.
 
-#prompts all folder-names and its contents using walk()
-for folderName in os.walk(pathName):
-    print('The current folder is ' + folderName)
+path = os.path.join('/home', 'joe', 'temp')
+print(os.getcwd())  # /home/joe/temp/py-test
+os.chdir(path)
+
+for i, (root, dirs, files) in enumerate(os.walk('.')):
+    if i > 3:
+        break
+    print(f'ROOT: {root}\n\tDIRS: {dirs}\n\t\tFILES: {files}')

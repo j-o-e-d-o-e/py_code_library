@@ -1,6 +1,6 @@
-pylab
+lib->pylab
 
-for plotting/graphs
+plotting graphs
 
 - generates a plot/graph
 - arguments are lists of values of the same length

@@ -1,20 +1,23 @@
 pip
 
-install
+package installer
 
-DOWNLOAD
-- python3 -m pip install SomePackage
-- pip3 install SomePackage
-- -m for mode (probably good to use)
+- install
+    - python3 -m pip install <name>
+        - -m: for mode
+    - pip install <name>
+    - specific version: <name>==xx.xx.xx
+- update
+    - python3 -m pip install --upgrade <name>
+    - pip install --upgrade <name>
+- list 
+    - pip list --format columns
+    - python3 -m pip
+- search
+    - pip3 search <name>
+    - python3 -m pip search <name>
+- info
+    - pip --help
 
-UPDATE
-- python3 -m pip install --upgrade SomePackage
-
-SEE ALL PACKAGES IN GLOBAL SITE PACKAGES
-- pip list --format columns
-
-SEARCH FOR PACKAGES
-- pip3 search SomePackage
-- python3 -m pip search SomePackage
-- displays candidates with descriptions
-
+- SEE ALSO
+    - pip.pypa.io
