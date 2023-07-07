@@ -1,12 +1,13 @@
 list
 
-
+data structure
 
 - methods
     - pop() pops the last item off the stack and returns its value
     - remove() removes the first occurrence of given arg
     - del() deletes element at a specific index
     - list() converts given string to list
+    - sort() mutates list in-place and returns None
 
 EXAMPLE
 ls = [2, 1, 0, 3]

@@ -1,6 +1,6 @@
 dictionary
 
-
+data structure
 
 - stores key-value-pairs
     - keys must be unique & immutable: int, float, string, tuple, bool

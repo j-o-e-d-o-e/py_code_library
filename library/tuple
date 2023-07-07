@@ -2,23 +2,22 @@ tuple
 
 data structure
 
-- immutable, very much like strings
-- concatenation possible
-- extra comma declares one value-expression as a singleton tuple
+(1) may be concatenated
+(2) may be sliced
+(3) may be assigned to
+- extra comma allows for tuple with single val
 
 EXAMPLE
-a = ('I', 'am', 'a', 'test', 'tuple')
-a[::2]
-#prompts: ('I', 'a', 'tuple')
+(1)
+t = ('joe', 'doe')
+print(t + ("bow",))     # ('joe', 'doe', 'bow')
 
-a + ("really",)
-#prompts: ('I', 'am', 'a', 'test', 'tuple', 'really')
+(2)
+print(t[::-1])          # ('doe', 'joe')
+print(t[1:])            # ('doe',)
 
-a[1] #prompts string: 'am'
-
-a[1:2] #prompts tuple: ('am',)
-
-#swap variables:
-x = 1
-y = 2
-(x,y) = (y,x)
+(3)
+(a, b) = t
+(x, y) = (t[1], t[0])
+print(b, a)             # doe joe
+print((b, a) == (x, y)) # True

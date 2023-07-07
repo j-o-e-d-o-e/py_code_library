@@ -1,5 +1,11 @@
 type
 
+built-in func
 
+- type(obj) returns the given obj's type
 
-Type in parentheses the object, whose type you'd like to know
+EXAMPLE
+print(type((1, 2, 3)))              # <class 'tuple'>
+print(type([1, 2, 3]))              # <class 'list'>
+print(type({1, 2, 3}))              # <class 'set'>
+print(type({1: 1, 2: 2, 3: 3}))     # <class 'dict'>

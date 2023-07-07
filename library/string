@@ -1,20 +1,42 @@
-strings
+string
 
 
 
-- strings are immutable. In order to change their value, save the changes in a new variable.
-- split() splits a string in pieces and returns a list
-- str.upper() returns string str in upper case
+- is immutable (like in Java)
+- triple quotes allow for multiline strings
+- slicing possible (1)
+- methods
+    - split(sep, maxsplit) (1)
+        - 1st arg: delimiter string or regex
+            - if not given, defaults to whitespace
+        - 2nd arg: how many splits at most (from left to right)
+            - by default, no limit
+        - returns new list
+    - join(iterable) (2)
+        - single arg: iterable of strings
+        - string on which method is called is inserted in between each elem
+        - returns new string
+    - replace(old, new, count) (3)
+        - 1st arg: to be replaced
+        - 2nd arg: replacement
+        - 3rd arg: how many occurences to be replaced (optional)
+            - defaults to -1, i.e. replace all occurences
+    - upper()/lower() returns string str in upper/lower case
 
 EXAMPLE
-name = "Zophie a cat"
-print (name)
-newName = name[0:7] + 'the' + name[8:12]
-print (newName)
+(1)
+name = "joedoe"
+res = name[0:3] + 'y ' + name[3:]
+print(res)  # joey doe
 
-pline = line.replace("\n", "") #remove newlines by replacing with ""
-print (pline)
+(2)
+res = name.split("oe")
+print(res)  # jd
 
-a = "adam and eve"
-a.split()
-#prompts: ['adam', 'and', 'eve']
+(3)
+res = " ".join(["cats", "dogs", "mice"])
+print(res)  # cats dogs mice
+
+(4)
+res = "beer".replace("e", "i", 1)
+print(res)  # bier

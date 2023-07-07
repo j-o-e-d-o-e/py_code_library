@@ -2,19 +2,13 @@ underscore
 
 
 
-- to indicate "throwaway"-variables, which are of no further interest
-- merely a convention: 'underscore' still gets a value assigned
+- to indicate "throwaway"-vars of no further interest
+- merely a convention: '_' still gets a val assigned
 
 EXAMPLE
-a=(1,2,3,4)
-b,_,_,c = a
-b,c
-#prompts: (1, 4)
+a, _, _, b = (1, 2, 3, 4)
+print(a, b)  # (1, 4)
 
-a = ((1,"a"),(2,"b"),(3,"c"))
-for _, i in a:
-	print (i)
-#prints:
-a
-b
-c
+c = ((1, "a"), (2, "b"), (3, "c"))
+for _, i in c:
+    print(i, end=" ")  # a b c

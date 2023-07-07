@@ -1,8 +1,8 @@
 ternary
 
+operator
 
-
-a if condition is true else b
+- a if <condition is true> else b
 
 EXAMPLE
 a = []

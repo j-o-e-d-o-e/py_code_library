@@ -1,33 +1,66 @@
 set
 
-unique elements, set theory
+data structure
 
-- Contains only unique elements
-- Stored in neither alphabetical nor numerical order
-- Only immutable objects are allowed as elements, means: no lists[], but tupel()
-- Frozensets are like sets, but additionally immutable, e.g. no add()-method usable
-- set() takes mutable object (lists) and returns a set. Useful for getting rid of duplicates in lists. Similarly, frozenset()-function
-- add() adds an element to set, if it isn't already included
-- difference() returns a list containing the unique elements of two lists. Similar to operator "-"
-- intersection() returns a list containing the common elements of two lists. Similar to "&"
-- union() returns a set containing all unique elements of both sets
-- discard("element") discards 'element' from set
+- unordered, unindexed iterable containing unique elems
+    - frozenset is additionally immutable, i.e. add()/remove() not available
+(1) creation
+    - literal with curly braces
+        - only immutable data types, otherwise raises TypeError
+    - construtor set()
+        - single arg: iterable
+(2) methods
+    - elementwise (2.1)
+        - add() adds an elem
+        - discard() removes an elem
+            - if not in set, do nothing
+        - remove() removes an elem
+            - if not in set, raise KeyError
+        - copy() returns shallow copy
+    - iterables (2.2)
+        - difference() returns new set containing elems that are in invoked set but not in args
+            - one or more arg(s): iterables
+            - equivalent: operator '-'
+            - difference_update() removes all elems of another set from this set (in-place)
+        - intersection() returns new set containing common elems
+            - equivalent: operator '&'
+            - intersection_update() modifies invoked set in-place
+        - union() returns new set containing elems that are in either iterables
+            - equivalent: operator '|'
+            - update() modifies invoked set in-place according to union()
+    - checks
+        - isdisjoint() returns True if two sets have a null intersection
+        - issubset() returns True if given set contains this set
+        - issuperset() returns True if this set contains given set
 
 EXAMPLE
-{("punk", "rock"),"jazz", "jazz"}
-#prompts only: {'jazz', ('punk', 'rock')}
+(1)
+words = "joe doe".split()
+# s = {words}               # TypeError
+s = set(words)
+print(s)                    # {'joe', 'doe'}
 
-tho ="might take some time".split()
-pho = set(tho)
-pho #prompts: {'some', 'might', 'time', 'take'}
+(2.1)
+s = set("joe doe")
+s.discard(' ')
+print(s)                    # {'d', 'o', 'e', 'j'}
 
-set("abcd") | set ("cdef")
-#prompts: {'a', 'e', 'f', 'd', 'c', 'b'}
+(2.2)
+a = {1, 2, 3, 4, 5}
+b = (1, 2)
+c = [3]
+d = {4: "jd"}
+diff1 = a.difference(b, c, d)
+print(diff1)                # {5}
+diff2 = a - set(b) - set(c) - set(d)
+print(diff1 == diff2)       # True
 
-set("dadaismus ist da")
-#prompts: {'s', 'm', ' ', 't', 'u', 'a', 'd', 'i'}
+inter1 = a.intersection(b)
+print(inter1)               # {1, 2}
+inter2 = a & set(b)
+print(inter1 == inter2)     # True
 
-alpha = {1,3}
-beta = 1,2
-alpha.difference(beta) #alternatively: alpha - set(beta)
-#prompts: {3}
+union1 = a.union(b)
+print(union1)               # {1, 2, 3, 4, 5}
+union2 = a | set(b)
+print(union1 == union2)     # True

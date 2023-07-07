@@ -21,6 +21,7 @@ generator = primes()
 next(generator)
 generator.__next__()
 print(next(generator))  # 3rd prime: 5
+
 (2)
 def permute(ls):
     if len(ls) == 0:

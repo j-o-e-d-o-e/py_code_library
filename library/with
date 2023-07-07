@@ -1,8 +1,8 @@
 with
 
-for opening files
+shorthand for opening files
 
-Shortcut. Instead of using open() AND close()
+- makes close()-call unnecessary
 
 EXAMPLE
 with open("text.txt", "w") as my_file:

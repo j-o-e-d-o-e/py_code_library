@@ -1,7 +1,10 @@
-template
+template->sub
 
 tags/src
 
-descr
+- descr
+
+- SEE ALSO
+    - ...
 
 EXAMPLE

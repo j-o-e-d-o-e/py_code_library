@@ -1,17 +1,30 @@
-slice
+list->slice
 
-for lists, strings
+operator
 
-- [start:end:stride]
-- s[i:j] returns a portion of string s from index i to index j-1
-- Negative 'stride' goes from right to left, therefore swap 'start' and 'end'
+- creates a copy and returns new list
+- [start : end : step]
+    - start: inclusive
+        - if not given, defaults to zero
+    - end: exclusive
+        - defaults to length of list
+    - step defaults to 1
+    - colons may be omitted if next val not set (from left to right)
+    - if negative
+        - 1st elem: -N (N: length of list) 
+        - last elem: -1
+- [::-1] reverses list
+- on right hand-side of assignment
+    - replace elems of list with elems of another list
+
+- SEE ALSO
+    - geeksforgeeks.org/python-list-slicing/
 
 EXAMPLE
-"sensible contrasts"[1:8:2]
-
-"hello"[:-1]
-#prompts: 'hell'
-
-my_list = range(1, 11)
-backwards = my_list[::-1]
-print (backwards)
+ls = [1, 2, 3, 4, 5]
+ls[:]               # [1, 2, 3, 4, 5]
+ls[-3::]            # [3, 4, 5]
+ls[1:3:]            # [2, 3]
+ls[::-1]            # [5, 4, 3, 2, 1]
+ls[::-3]            # [5, 2]
+ls[2:4] = [6, 6, 7] # [1, 2, 6, 6, 7, 5]

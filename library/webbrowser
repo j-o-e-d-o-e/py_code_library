@@ -1,10 +1,11 @@
 webbrowser
 
+built-in module
 
-
-- opens webpages in scripts
-
-webbrowser.open() opens a new tab to the named URL
+- methods
+    -open(url) opens url in browser
 
 EXAMPLE
+import webbrowser
+
 webbrowser.open("https://github.com/")

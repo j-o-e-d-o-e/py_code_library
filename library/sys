@@ -1,14 +1,14 @@
-sys.argv
+sys
 
+built-in module
 
-
-sys.argv returns a list containing the program's filename [0] and arguments from the command line [1:] (not from IDLE!). If command line arguments have been provided, then len(sys.argv) evaluates to an integer greater than 1.
-
-In order to execute, start script (eg "map.py") from the command line in the current working directory, e.g. "map first_arg second_arg"
+- properties
+    - argv returns list containing program's filename [0] and args from command line [1:]
 
 EXAMPLE
-#opens google maps with address from command line:
-import webbrowser, sys
+# python3 <filename> <address>
+import sys
+import webbrowser
 
 address = '+'.join(sys.argv[1:])
 webbrowser.open('https://www.google.com/maps/place/' + address)

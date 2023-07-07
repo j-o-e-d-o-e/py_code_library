@@ -1,21 +1,11 @@
 virtualenv
 
-for including only specific packages
+tool
 
-Following commands to be used in command prompt or git bash:
-
-INITIALIZE
-virtualenv project1
-
-ACTIVATE
-source project1/Scripts/activate
-
-QUERIES
-which python #shows path
-which pip
-
-DEACTIVATE
-deactivate
-
-REMOVE
-rm -rf project1/
+- initialize: $virtualenv project
+- activate: $source project1/Scripts/activate
+- query
+    - path: $which python
+    - pip: $which pip
+- deactive: $deactivate
+- remove: $rm -rf project/

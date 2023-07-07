@@ -1,6 +1,6 @@
 lib->pprint
 
-prettyprint for dicts, lists, tuples
+prettyprint for iterables
 
 - methods
     - pprint(iterable) prints iterable in alphanumerical order

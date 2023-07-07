@@ -1,15 +1,15 @@
-string->matrix
+string->2-dim list
 
 prettyprint 
 
-- print 2-dimensional-array in aligned fashion
+- print 2-dimensional list in aligned columns
 
 EXAMPLE
-data = [['a', 'b', 'c'], ['aaa', 'b', 'c'], ['a', 'bbb', 'c']]
+matrix = [['a', 'b', 'c'], ['aaa', 'b', 'c'], ['a', 'bbb', 'c']]
 
-col_width = max(len(word) for row in data for word in row) + 2
-for row in data:
-    print("".join(word.ljust(col_width) for word in row))
+col_width = max(len(elem) for row in matrix for elem in row) + 2
+for row in matrix:
+    print("".join(col.ljust(col_width) for col in row))
 # a    b    c    
 # aaa  b    c    
 # a    bbb  c

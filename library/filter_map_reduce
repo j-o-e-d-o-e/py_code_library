@@ -1,6 +1,6 @@
-list->funcs
+filter/map/reduce
 
-filter, map, reduce
+built-in funcs
 
 (1) filter(func, iterable)
     - returns iterator yielding those elems of iterable for which func returns True

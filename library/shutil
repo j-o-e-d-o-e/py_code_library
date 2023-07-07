@@ -1,8 +1,18 @@
 shutil
 
-module, copying/archiving
+built-in module, "shell utilies"
 
-- shutil.copy('source', 'destination') copies the file at the path source to the folder at the path destination
-- shutil.copytree('source', 'destination') copies an entire folder and every folder and file contained in it
-- shutil.move('source', 'destination') moves the file or folder at the path source to the path destination
-- shutil.rmtree('path') removes the folder at path, and all files and folders it contains will also be deleted (for deleting with backups see 'send2trash')
+- methods, e.g.
+    - copy(src, dest) copies file/folder at source to destination
+    - copytree(src, dest) copies folder, its subfolders and files to dest
+    - move(src, dest) moves file/folder at source to destination
+    - rmtree(path) removes tree at path
+        - for deleting with backups, see entry: send2trash
+
+EXAMPLE
+import shutil
+
+source = "main.py"
+dest = "./venv/"
+res = shutil.copy(source, dest)
+print("Destination path:", res)

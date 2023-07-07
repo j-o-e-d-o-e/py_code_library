@@ -1,16 +1,39 @@
 zip
 
-for lists
+built-in func
 
-Creates pairs of elements, stops at the end of the shorter list
+- zip(iterables)
+    - args: two or more iterables
+    - combines args into a single iterable where elems from corresponding indices are paired together
+    - returns new iterable zip-obj containing tuples (1)
+    - stops at the end of the shortest iterable
+    - use cases
+        (2) in conjunction with enumerate, e.g. to create index-based tables
+        (3) to create dicts
+        (4) to unzip, e.g. to get original iterables
 
 EXAMPLE
-list_a = [3, 9, 17, 15, 19]
-list_b = [2, 4, 8, 10, 30, 40, 50, 60, 70, 80, 90]
+(1)
+ls1 = [1, 5, 3]
+ls2 = [4, 2, 6]
+res = list(zip(ls1, ls2))
+print(res)  # [(1, 4), (5, 2), (3, 6)]
 
-for a, b in zip(list_a, list_b):
+(2)
+ls1 = ['joe doe', 'mary jane']
+ls2 = [34, 43, 45, 54, 56, 65]
+for i, (name, age) in enumerate(zip(ls1, ls2)):
+    print(i, name, age)
+# 0 joe doe 34
+# 1 mary jane 43
 
-    if a>b:
-        print (a)
-    elif b>a:
-        print (b)
+(3)
+dict = {entries: pair for entries, pair in zip(ls1, ls2)}
+print(dict)  # {'joe doe': 34, 'mary jane': 43}
+
+(4)
+ls1 = [1, 5, 3]
+ls2 = [4, 2, 6]
+zipped = zip(ls1, ls2)
+a, b = zip(*zipped)
+print(list(a) == ls1, list(b) == ls2)  # True True
