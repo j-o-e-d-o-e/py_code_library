@@ -1,15 +1,24 @@
 math
 
+built-in funcs/operators
 
-
-- min()
-    - single iterable as arg: returns its smallest elem (1.1)
-    - two or more args: returns smallest arg (1.2)
+- operators
+    (1) // returns int (/ returns float)
+- funcs
+    (2) min()
+        - single iterable as arg: returns its smallest elem (2.1)
+        - two or more args: returns smallest arg (2.2)
+    - conversion
+        - int() converts float to int
+        - float() converts int to float
 
 EXAMPLE
-(1.1)
+(1)
+print(7 // 4)               # 1
+
+(2.1)
 print(min([1, 2, 3]))       # 1
-(1.2)
+(2.2)
 print(min(1, 2, 3))         # 1
 
 print(min([3, 4], [1, 2]))  # [1, 2]
