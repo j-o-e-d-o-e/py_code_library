@@ -3,11 +3,21 @@ math
 built-in funcs/operators
 
 - operators
-    (1) // returns int (/ returns float)
+    - '//' returns int (1)
+    - '/' returns float
+    - '**' for exponentation
 - funcs
-    (2) min()
-        - single iterable as arg: returns its smallest elem (2.1)
-        - two or more args: returns smallest arg (2.2)
+    - min(iterables, key=func, default=obj) (2)
+        - single iterable as arg: returns its smallest elem
+        - two or more args: returns smallest arg
+        - key: mapping func (optional)
+        - default: if iterables is empty, returns its val (optional)
+            - if named arg is not given, throws ValueError
+    - round(number, decimal) (3)
+        - 1st arg: float to be rounded
+        - 2nd arg: how many decimal places
+            - if omitted, defaults to zero
+            - if negative, determines how many places before comma
     - conversion
         - int() converts float to int
         - float() converts int to float
@@ -16,9 +26,13 @@ EXAMPLE
 (1)
 print(7 // 4)               # 1
 
-(2.1)
+(2)
 print(min([1, 2, 3]))       # 1
-(2.2)
 print(min(1, 2, 3))         # 1
-
 print(min([3, 4], [1, 2]))  # [1, 2]
+res = min([1, 2, 3], key=lambda x: x if x % 2 == 0 else 10)
+print(res)                  # 2
+
+(3)
+res = round(333.333, -2)
+print(res)                  # 300.0
