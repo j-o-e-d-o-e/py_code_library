@@ -1,6 +1,6 @@
-list->del
+del
 
-built-in func
+operator
 
 - deletes elem at specified index
 

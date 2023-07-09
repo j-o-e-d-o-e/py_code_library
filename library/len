@@ -2,7 +2,7 @@ len
 
 built-in func
 
-- returns length of an iterable
+- returns length of iterable
 
 EXAMPLE
 l = len(range(10))

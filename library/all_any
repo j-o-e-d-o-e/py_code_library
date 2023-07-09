@@ -4,7 +4,7 @@ built-in funcs
 
 (1) all(iterable) returns True if all items are True
     - if arg is empty, returns True
-- any(iterable) returns True if any item is True
+(2) any(iterable) returns True if any item is True
     - if no arg, returns False
 
 EXAMPLE
