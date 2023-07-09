@@ -1,0 +1,20 @@
+all/any
+
+built-in funcs
+
+(1) all(iterable) returns True if all items are True
+    - if arg is empty, returns True
+- any(iterable) returns True if any item is True
+    - if no arg, returns False
+
+EXAMPLE
+(1)
+func = (lambda first, *rest: first if all([r == first for r in rest]) else [first, *rest])
+res = func(3, 3, 3)
+print(res)  # 3
+res = func(3, 3, 2)
+print(res)  # [3, 3, 2]
+
+(2)
+print(any([False, 0, ""]))  # False
+print(any([False, 0, " "])) # True

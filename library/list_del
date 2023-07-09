@@ -1,0 +1,10 @@
+list->del
+
+built-in func
+
+- deletes elem at specified index
+
+EXAMPLE
+ls = [1, 2, 3]
+del ls[1]
+print(ls)  # [1, 3]

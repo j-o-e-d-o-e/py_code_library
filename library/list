@@ -2,15 +2,72 @@ list
 
 data structure
 
-- methods
-    - pop() pops the last item off the stack and returns its value
-    - remove() removes the first occurrence of given arg
-    - del() deletes element at a specific index
-    - list() converts given string to list
-    - sort() mutates list in-place and returns None
+- ordered, indexed and mutable iterable
+    - if index is negative
+        - 1st elem: -N (N: length of list) 
+        - last elem: -1
+(1) creation
+    - literal with square brackets
+    - constructor list()
+        - single arg: iterable
+        - if no arg, empty list
+(2) methods
+    - add
+        - append(val) adds val at the end (2.1)
+        - extend(ls) adds iterable at the end (2.2)
+        - insert(i, val) adds val at specified index (2.3)
+    - remove
+        - pop(i) removes and returns elem at given index (2.4)
+            - if no arg given, defaults to last
+            - if list is empty or index is out of range, raises IndexError
+        - remove(val) removes 1st occurrence of given val (2.5)
+            - if val not present, raises ValueError
+    - misc
+        - count(val) returns number of occurences of val (2.6)
+        - sort(key, reverse) sorts list in-place and returns None (2.7)
+            - 1st arg: mapping func (optional)
+                - applied to each elem prior to comparison
+            - 2nd arg: ascending, if False; otherwise, descending (optional)
+                - if not given, sorts in ascending order
+        - index(val) returns index of 1st occurence of val
+            - if val not present, raises ValueError
+        - reverse() reverses list in-place
+        - copy() returns shallow copy (1st level copied, deeper levels referenced)
+        - clear() removes all elems
 
 EXAMPLE
-ls = [2, 1, 0, 3]
-del (ls[2])  # [2, 1, 3]
-ls.pop()  # [2, 1]
-ls.remove(2)  # [1]
+(1)
+ls = list("joe doe")
+print(ls)           # ['j', 'o', 'e', ' ', 'd', 'o', 'e']
+
+dict = {1: '1', 2: '2', 3: '3'}
+ls = list(dict)  # equivalent to: list(dict.keys())
+print(ls)           # [1, 2, 3]
+
+(2.1)
+ls = [1, 2, 3]
+ls.append(4)
+print(ls)           # [1, 2, 3, 4]
+(2.2)
+ls = [1, 2, 3]
+ls.extend((4, 5, 6))
+print(ls)           # [1, 2, 3, 4, 5, 6]
+(2.3)
+ls = [2, 1]
+ls.insert(0, 3)
+print(ls)           # [3, 2, 1]
+(2.4)
+ls = [2, 0, 1, 3]
+ls.pop(1) 
+print(ls)           # [2, 1, 3]
+(2.5)
+ls = [2, 0, 0, 3]
+ls.remove(0)
+print(ls)           # [2, 0, 3]
+(2.6)
+res = [1, 1, 2, 3].count(1)
+print(res)          # 2
+(2.7)
+ls = [2, 1, 3]
+ls.sort(key=lambda x: -x, reverse=True)  # equivalent to: ls.sort()
+print(ls)           # [1, 2, 3]
