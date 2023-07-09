@@ -1,0 +1,7 @@
+bool
+
+operators
+
+- and: logical AND
+- or: logical OR
+- not: logical NOT
