@@ -1,7 +1,18 @@
 bool
 
-operators
 
-- and: logical AND
-- or: logical OR
-- not: logical NOT
+
+- vals: 'True' and 'False'
+- operators
+    - and: logical AND
+    - or: logical OR
+    - is: logical EQUAL
+        - equivalent: ==
+    - is not: logical NOT
+        - equivalent: !=
+- multiple comparisons in one line possible
+
+EXAMPLE
+a, b, c = 3, 3, 3
+print(a is b and a is c)  # True
+
