@@ -53,6 +53,9 @@ string
             - lower(): all ascii-chars
             - casefold(): all chars, including special chars
     - check
+        - startswith(val, start, end) whether str starts with val (10)
+            - 1st arg: string or tupel of strings
+            - endswith(val, start, end)
         - istitle(), isupper(), islower()
         - startswith(val, start, end), endswith(val, start, end)
         - isalnum(), isalpha(), isdigit(), isnumeric()
@@ -77,3 +80,5 @@ name.split("oe")                    # jd
 "joe {last}".format(last="doe")     # joe doe
 (9)
 " joe doe ".center(15, "#")         # ### joe doe ###
+(10)
+"joedoe".endswith(('a', 'e', 'i', 'o', 'u'))  # True

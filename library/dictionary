@@ -2,20 +2,25 @@ dictionary
 
 data structure
 
-- stores key-value-pairs
+- stores key-value-pairs (key: val)
     - keys must be unique & immutable: int, float, string, tuple, bool
     - vals may be of any type
 - no guaranteed order
-(1) add: dict[key] = val
-(2) retrieve
-    - 'dict[key]' returns val for given key
-    - 'dict.get(key, default)' returns val for given key if key is in dict, else default
-(3) in-operator checks whether dict contains key/val
-(4) remove: del(dict[key])
-(5) iterables
-    - 'dict.items()' returns list of key-val-pairs
-    - 'dict.keys()' returns list of keys
-    - 'dict.values()' returns list of vals
+- creation
+    - literal with curly braces and key-value-pairs
+    - constructor dict()
+        - single arg: iterable
+- methods
+    (1) add: dict[key] = val
+    (2) retrieve
+        - 'dict[key]' returns val for given key
+        - 'dict.get(key, default)' returns val for given key if key is in dict, else default
+    (3) in-operator checks whether dict contains key/val
+    (4) remove: del(dict[key])
+    (5) iterables
+        - 'dict.items()' returns list of key-val-pairs
+        - 'dict.keys()' returns list of keys
+        - 'dict.values()' returns list of vals
 
 EXAMPLE
 dict = {1: 'apple', 2: 'berry'}

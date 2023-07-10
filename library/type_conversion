@@ -1,0 +1,26 @@
+type conversion
+
+built-in funcs
+
+(1) int(val, base) converts str to an int
+    - 1st arg: string, bytes-like obj or real num
+    - 2nd arg: e.g. 2 for bin, 10 for dec (optional)
+        - if not specified, defaults to 10
+    - if not convertable, raises specific Error
+(2) float(val) converts int, str to float
+(3) str(val) converts int to string
+(4) chr(val) converts int to its corresponding ascii-char
+
+- SEE ALSO
+    - entries for data structures: dict, list, set, tuple
+
+EXAMPLE
+(1)
+int("2", 10)    # 2
+(2)
+float(2)        # 2.0
+(3)
+chr(97)         # a
+(4)
+str(1)          # 1
+

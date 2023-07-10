@@ -2,21 +2,33 @@ tuple
 
 data structure
 
-(1) may be concatenated
-(2) may be sliced
-(3) may be assigned to
-- extra comma allows for tuple with single val
+- creation
+    (1) literal in braces
+        - extra comma allows for tuple with single val
+    (2) constructor tuple(iterable)
+        - arg: single iterable
+- operations
+    (3) may be concatenated
+    (4) may be sliced
+    (5) may be assigned to
+
 
 EXAMPLE
 (1)
+tuple("123")  # ('1', '2', '3')
+
+(2)
+tuple([1, 2, 3])  # (1, 2, 3)
+
+(3)
 t = ('joe', 'doe')
 print(t + ("bow",))     # ('joe', 'doe', 'bow')
 
-(2)
+(4)
 print(t[::-1])          # ('doe', 'joe')
 print(t[1:])            # ('doe',)
 
-(3)
+(5)
 (a, b) = t
 (x, y) = (t[1], t[0])
 print(b, a)             # doe joe

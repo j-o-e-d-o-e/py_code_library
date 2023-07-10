@@ -3,6 +3,9 @@ bool
 
 
 - vals: 'True' and 'False'
+- any obj can be teste for its truth value
+- falsy values (convert to 'False'): False, 0, None, empty string/list/dict/tuple/set/range
+    - truthy values: all other vals
 - operators
     - and: logical AND
     - or: logical OR
