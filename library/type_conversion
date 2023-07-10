@@ -10,6 +10,7 @@ built-in funcs
 (2) float(val) converts int, str to float
 (3) str(val) converts int to string
 (4) chr(val) converts int to its corresponding ascii-char
+(5) ord(val) converts char to its ascii-num
 
 - SEE ALSO
     - entries for data structures: dict, list, set, tuple
@@ -23,4 +24,5 @@ float(2)        # 2.0
 chr(97)         # a
 (4)
 str(1)          # 1
-
+(5)
+ord('a')        # 97

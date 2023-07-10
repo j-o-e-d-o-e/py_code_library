@@ -2,9 +2,10 @@ string
 
 
 
-- is immutable (like in Java)
+- is immutable, but iterable
 - triple quotes allow for multiline strings
 - slicing possible (1)
+- '+'-operator allows for concatenation
 - methods
     (2) split(sep, maxsplit)
         - 1st arg: delimiter string or regex
