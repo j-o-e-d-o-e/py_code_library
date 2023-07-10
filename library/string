@@ -6,37 +6,74 @@ string
 - triple quotes allow for multiline strings
 - slicing possible (1)
 - methods
-    - split(sep, maxsplit) (1)
+    (2) split(sep, maxsplit)
         - 1st arg: delimiter string or regex
             - if not given, defaults to whitespace
         - 2nd arg: how many splits at most (from left to right)
             - by default, no limit
         - returns new list
-    - join(iterable) (2)
+        - rsplit(): from right to left
+    (3) join(iterable)
         - single arg: iterable of strings
         - string on which method is called is inserted in between each elem
         - returns new string
-    - replace(old, new, count) (3)
+    (4) replace(old, new, count)
         - 1st arg: to be replaced
         - 2nd arg: replacement
         - 3rd arg: how many occurences to be replaced (optional)
             - defaults to -1, i.e. replace all occurences
-    - upper()/lower() returns string str in upper/lower case
+    (5) find(val, start, end) searches for specified val
+        - 2nd/3rd arg: where to search (optional)
+        - returns index of 1st occurence
+            - if val not present, returns -1
+        - rfind() starts from right
+        - (almost) equivalent: index(val, start, end)
+            - if val not present, raises ValueError
+    (6) count(val, start, end) returns number of occurences of specified val
+        - 2nd/3rd arg: where to count (optional)
+    (7) partition(sep) divides str into 3 parts and returns 3-tuple
+        - if separator not present, returns 3-tuple with original and two empty str
+        - rpartition() starts from right
+    - format
+        - format(**kwargs) substitutes parts within curly braces and returns string (8)
+            - multiple args: vals for substitution
+        - strip() removes leading/trailing whitespace and returns string
+            - lstrip()/rstrip() removes leading resp. trailing whitespace
+        - center(width, char) returns centered string
+            - 1st arg: width of resulting string
+            - 2nd arg: used for padding (optional)
+                - defaults to whitespace
+        - ljust(width, char)/rjust(width, char) returns left resp. right justified string
+        - zfill(width) pads numeric string with zeros to the left
+        - to upper-case
+            - capitalize(): only 1st char
+            - title(): 1st char of each word
+            - upper(): all chars
+        - to lower-case
+            - lower(): all ascii-chars
+            - casefold(): all chars, including special chars
+    - check
+        - istitle(), isupper(), islower()
+        - startswith(val, start, end), endswith(val, start, end)
+        - isalnum(), isalpha(), isdigit(), isnumeric()
 
 EXAMPLE
 (1)
 name = "joedoe"
-res = name[0:3] + 'y ' + name[3:]
-print(res)  # joey doe
-
+name[0:3] + 'y ' + name[3:]         # joey doe
 (2)
-res = name.split("oe")
-print(res)  # jd
-
+name.split("oe")                    # jd
 (3)
-res = " ".join(["cats", "dogs", "mice"])
-print(res)  # cats dogs mice
-
+" ".join(["cats", "dogs", "mice"])  # cats dogs mice
 (4)
-res = "beer".replace("e", "i", 1)
-print(res)  # bier
+"beer".replace("e", "i", 1)         # bier
+(5)
+"joe doe".find("oe", 3)             # 5
+(6)
+"joe doe".count("oe")               # 2
+(7)
+"joe doe".partition("oe")           # ('j', 'oe', ' doe')
+(8)
+"joe {last}".format(last="doe")     # joe doe
+(9)
+" joe doe ".center(15, "#")         # ### joe doe ###

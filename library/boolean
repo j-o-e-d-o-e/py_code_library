@@ -1,0 +1,20 @@
+bool
+
+
+
+- vals: 'True' and 'False'
+- operators
+    - and: logical AND
+    - or: logical OR
+    - equality
+        - ==/!=: compare vals
+        - is (not): compare identity
+            - only useful in conjunction with None
+- multiple comparisons in one line possible (chaining)
+
+EXAMPLE
+a, b, c = 3, 3, 3
+print(a is b and a is c)# True
+
+a, b, c = 1, 2, 3
+print(a < b < c)        # True

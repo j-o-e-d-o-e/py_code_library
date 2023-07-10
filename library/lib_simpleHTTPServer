@@ -1,6 +1,0 @@
-lib->simpleHTTPServer
-
-
-
-- setup: python -m http.server 8080
-- access: http://localhost:8080
