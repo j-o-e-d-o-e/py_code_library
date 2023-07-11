@@ -1,6 +1,6 @@
 math
 
-built-in funcs/operators
+built-in funcs/operators/module
 
 - operators
     - '//' returns int (1)
@@ -13,14 +13,18 @@ built-in funcs/operators
         - key: mapping func (optional)
         - default: if iterables is empty, returns its val (optional)
             - if named arg is not given, throws ValueError
-    - round(number, decimal) (3)
+    - round(number, decimal) rounds down (3)
         - 1st arg: float to be rounded
         - 2nd arg: how many decimal places
             - if omitted, defaults to zero
             - if negative, determines how many places before comma
-    - conversion
-        - int() converts float to int
-        - float() converts int to float
+    - sum(iterable, init)
+        - 1st arg: iterable
+            - if empty, returns init
+        - 2nd arg: initial val (optional)
+            - if not given, defaults to zero
+- methods in module 'math' (4)
+    - ceil() rounds up
 
 EXAMPLE
 (1)
@@ -34,5 +38,9 @@ res = min([1, 2, 3], key=lambda x: x if x % 2 == 0 else 10)
 print(res)                  # 2
 
 (3)
-res = round(333.333, -2)
-print(res)                  # 300.0
+res = round(333.333, -2)    # 300.0
+
+(4)
+import math
+
+math.ceil(333.333)          # 334

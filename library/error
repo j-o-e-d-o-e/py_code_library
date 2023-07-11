@@ -1,0 +1,18 @@
+error
+
+
+
+- types
+    - IndexError: trying to access beyond limits of a list
+    - TypeError: trying to convert an inappropriate type or mixing data types without appropriate coercion
+    - ValueError: operand type okay, but value is illegal
+    - Name Error: referencing a non-existent variable
+    - Syntax error: forgetting to close parenthesis, quotation, etc.
+    - AttributeError: attribute reference fails
+    - IOError: IO system reports malfunction (eg file not found)
+
+EXAMPLE
+def only_positive(n):
+    if n <= 0:
+        raise ValueError("Only positive integers are allowed")
+    return n

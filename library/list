@@ -7,30 +7,37 @@ data structure
         - 1st elem: -N (N: length of list) 
         - last elem: -1
 (1) creation
-    - literal with square brackets
+    - literal within square brackets
+        - fill with defaults: [default] * len
     - constructor list()
         - single arg: iterable
         - if no arg, empty list
-(2) '+'-operator allows to concantenate lists
-(3) methods
+(2) '+'-operator allows to concatenate multiple lists
+(3) 'in (not)' checks wheter list contains elem (or not)
+(4) methods
     - add
-        - append(val) adds val at the end (3.1)
-        - extend(ls) adds iterable at the end (3.2)
-        - insert(i, val) adds val at specified index (3.3)
+        - append(val) adds val at the end (4.1)
+        - extend(iterable) adds vals of iterable at the end (4.2)
+            - useful for adding: tuple, set, string (for list, use '+')
+        - insert(i, val) adds val at specified index (4.3)
+            - if given index is greater len - 1, val is added at the end
     - remove
-        - pop(i) removes and returns elem at given index (3.4)
-            - if no arg given, defaults to last
-            - if list is empty or index is out of range, raises IndexError
-        - remove(val) removes 1st occurrence of given val (3.5)
+        - remove(val) removes 1st occurrence of given val (4.4)
             - if val not present, raises ValueError
+        - pop(i) removes and returns elem at given index (4.5)
+            - single arg: index (optional)
+                - if no arg given, defaults to last
+                - if index greater len -1, raises IndexError
+            - if list is empty or index is out of range, raises IndexError
     - misc
-        - count(val) returns number of occurences of val (3.6)
-        - sort(key, reverse) sorts list in-place and returns None (3.7)
-            - 1st arg: mapping func (optional)
+        - count(val) returns number of occurences of val (4.6)
+        - sort(key, reverse) sorts list in-place and returns None (4.7)
+            - 1st arg (named): mapping func (optional)
                 - applied to each elem prior to comparison
-            - 2nd arg: ascending, if False; otherwise, descending (optional)
+            - 2nd arg (named): descending, if True (optional)
                 - if not given, sorts in ascending order
-        - index(val) returns index of 1st occurence of val
+        - index(val, start, end) returns index of 1st occurence of val
+            - 2nd and 3rd arg: slice params (optional)
             - if val not present, raises ValueError
         - reverse() reverses list in-place
         - copy() returns shallow copy (1st level copied, deeper levels referenced)
@@ -38,6 +45,8 @@ data structure
 
 EXAMPLE
 (1)
+ls = [0] * 3        # [0, 0, 0]
+
 ls = list("joe doe")
 print(ls)           # ['j', 'o', 'e', ' ', 'd', 'o', 'e']
 
@@ -50,30 +59,30 @@ a = [1, 2, 3]
 b = [4, 5, 6]
 c = a + b           # [1, 2, 3, 4, 5, 6]
 
-(3.1)
+(4.1)
 ls = [1, 2, 3]
 ls.append(4)
 print(ls)           # [1, 2, 3, 4]
-(3.2)
+(4.2)
 ls = [1, 2, 3]
 ls.extend((4, 5, 6))
 print(ls)           # [1, 2, 3, 4, 5, 6]
-(3.3)
+(4.3)
 ls = [2, 1]
 ls.insert(0, 3)
 print(ls)           # [3, 2, 1]
-(3.4)
-ls = [2, 0, 1, 3]
-ls.pop(1) 
-print(ls)           # [2, 1, 3]
-(3.5)
+(4.4)
 ls = [2, 0, 0, 3]
 ls.remove(0)
 print(ls)           # [2, 0, 3]
-(3.6)
+(4.5)
+ls = [2, 0, 1, 3]
+ls.pop(1) 
+print(ls)           # [2, 1, 3]
+(4.6)
 res = [1, 1, 2, 3].count(1)
 print(res)          # 2
-(3.7)
+(4.7)
 ls = [2, 1, 3]
 ls.sort(key=lambda x: -x, reverse=True)  # equivalent to: ls.sort()
 print(ls)           # [1, 2, 3]

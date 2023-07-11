@@ -4,9 +4,10 @@ built-in func
 
 - sorted(iterable, key, reverse)
     - 1st arg: to be sorted
-    - 2nd arg: mapping func (optional)
+    - 2nd arg (named): mapping func (optional)
         - applied to each elem prior to comparison
-    - 3rd arg: ascending, if False; otherwise, descending (optional)
+    - 3rd arg (named): descending, if True (optional)
+        - if not given, sorts in ascending order
     - returns new list in de-/ascending order
 
 EXAMPLE

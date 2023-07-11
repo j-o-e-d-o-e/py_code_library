@@ -4,6 +4,7 @@ built-in module
 
 (1) copy() returns a shallow copy (1st level copied, deeper levels referenced)
 (2) deepcopy() returns a copy including all levels
+    - therefore, also copies all references and objs
 
 EXAMPLE
 import copy

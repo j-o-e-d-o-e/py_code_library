@@ -6,6 +6,7 @@ string
 - triple quotes allow for multiline strings
 - slicing possible (1)
 - '+'-operator allows for concatenation
+- comparison operators (>, ==, etc.) compare strings lexicographically 
 - methods
     (2) split(sep, maxsplit)
         - 1st arg: delimiter string or regex
@@ -38,9 +39,11 @@ string
     - format
         - format(**kwargs) substitutes parts within curly braces and returns string (8)
             - multiple args: vals for substitution
-        - strip() removes leading/trailing whitespace and returns string
+        - strip(chars) removes leading/trailing chars and returns string (9)
+            - single arg: to be removed from start and end (optional)
+                - if not specified, defaults to whitespace
             - lstrip()/rstrip() removes leading resp. trailing whitespace
-        - center(width, char) returns centered string
+        - center(width, char) returns centered string (10)
             - 1st arg: width of resulting string
             - 2nd arg: used for padding (optional)
                 - defaults to whitespace
@@ -54,12 +57,15 @@ string
             - lower(): all ascii-chars
             - casefold(): all chars, including special chars
     - check
-        - startswith(val, start, end) whether str starts with val (10)
+        - startswith(val, start, end) whether str starts with val (11)
             - 1st arg: string or tupel of strings
             - endswith(val, start, end)
         - istitle(), isupper(), islower()
         - startswith(val, start, end), endswith(val, start, end)
         - isalnum(), isalpha(), isdigit(), isnumeric()
+
+- SEE ALSO
+    - docs.python.org/3/library/stdtypes.html#string-methods
 
 EXAMPLE
 (1)
@@ -80,6 +86,8 @@ name.split("oe")                    # jd
 (8)
 "joe {last}".format(last="doe")     # joe doe
 (9)
-" joe doe ".center(15, "#")         # ### joe doe ###
+"joe doeee".strip("oe")             # joe d
 (10)
+" joe doe ".center(15, "#")         # ### joe doe ###
+(11)
 "joedoe".endswith(('a', 'e', 'i', 'o', 'u'))  # True

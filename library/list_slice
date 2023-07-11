@@ -7,7 +7,7 @@ operator
     - start: inclusive
         - if not given, defaults to zero
     - end: exclusive
-        - defaults to length of list
+        - if not given or greater than len, defaults to len of iterable
     - step defaults to 1
     - colons may be omitted if next val not set (from left to right)
     - if negative
