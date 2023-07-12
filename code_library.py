@@ -66,7 +66,7 @@ def ansi_format(txt, color=RED, color_bg=False, bold=False, underline=False):
 
 
 def main():
-    readline.clear_history()
+    readline.clear_history()  # adds arrow-up/-down functionality
     lib = setup_lib()
     print_toc(lib)
     while True:

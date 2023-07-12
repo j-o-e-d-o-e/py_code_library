@@ -2,8 +2,8 @@ logging
 
 built-in module
 
-methods on logger
-    - basicConfig() configures obj
+- methods
+    - basicConfig() configures logger
         - if level is set, only messages on this level and above are shown
             - hierarchy of levels: DEBUG -> INFO -> WARNING -> ERROR -> CRITICAL 
     - debug()/info()/warning()/error()/critical() display message for each level

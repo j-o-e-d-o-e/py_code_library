@@ -9,7 +9,7 @@ matrix = [['a', 'b', 'c'], ['aaa', 'b', 'c'], ['a', 'bbb', 'c']]
 
 col_width = max(len(elem) for row in matrix for elem in row) + 2
 for row in matrix:
-    print("".join(col.ljust(col_width) for col in row))
+    print("".join([col.ljust(col_width) for col in row]))
 # a    b    c    
 # aaa  b    c    
 # a    bbb  c

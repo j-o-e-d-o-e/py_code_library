@@ -7,10 +7,10 @@ built-in func
     - combines args into a single iterable where elems from corresponding indices are paired together
     - returns new iterable zip-obj containing tuples (1)
     - stops at the end of the shortest iterable
-    - use cases
-        (2) in conjunction with enumerate, e.g. to create index-based tables
-        (3) to create dicts
-        (4) to unzip, e.g. to get original iterables
+- use cases
+    (2) in conjunction with enumerate, e.g. to create index-based tables
+    (3) to create dicts
+    (4) to unzip, e.g. to get original iterables
 
 EXAMPLE
 (1)

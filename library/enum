@@ -2,8 +2,10 @@ enum
 
 built-in module
 
-- iterable
-- creation via class (1) or functional (2) syntax
+- iterable collection of constants
+- creation via
+    (1) class syntax
+    (2) functional syntax
 
 EXAMPLE
 from enum import Enum

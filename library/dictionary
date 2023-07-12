@@ -7,7 +7,7 @@ data structure
     - vals may be of any type
 - no guaranteed order
 - creation
-    - literal with curly braces and key-value-pairs
+    - literal within curly braces and key-value-pairs
     - constructor dict()
         - single arg: iterable
 - methods

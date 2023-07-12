@@ -4,9 +4,11 @@ string
 
 - is immutable, but iterable
 - triple quotes allow for multiline strings
-- slicing possible (1)
-- '+'-operator allows for concatenation
-- comparison operators (>, ==, etc.) compare strings lexicographically 
+- operations
+    - may be sliced (1)
+    - '+'-operator allows for concatenation
+    - 'in'-operator for containment check
+    - comparison operators (>, ==, etc.) compare strings lexicographically 
 - methods
     (2) split(sep, maxsplit)
         - 1st arg: delimiter string or regex
@@ -38,7 +40,7 @@ string
         - rpartition() starts from right
     - format
         - format(**kwargs) substitutes parts within curly braces and returns string (8)
-            - multiple args: vals for substitution
+            - multiple args (named): vals for substitution
         - strip(chars) removes leading/trailing chars and returns string (9)
             - single arg: to be removed from start and end (optional)
                 - if not specified, defaults to whitespace

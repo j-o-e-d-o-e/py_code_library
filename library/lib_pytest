@@ -2,11 +2,11 @@ lib->pytest
 
 testing
 
-- create test-class
-    - inherits from unittest.Testcase
-    - each func is annotated, e.g. @pytest.mark.task(taskno=1)
-    - methods
-        - assertEqual(act, exp, msg) fails if the two objs are unequal
+- test-class
+    -  inherits from unittest.Testcase
+    - each test is annotated, e.g. @pytest.mark.task(taskno=1)
+- methods 
+    - assertEqual(act, exp, msg) fails if the two objs are unequal
 
 - SEE ALSO
     - docs.pytest.org

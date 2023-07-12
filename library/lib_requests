@@ -2,9 +2,10 @@ lib->requests
 
 HTTP client
 
-- requests.get() sends a GET request
-    - 1st arg: url
-    - 2nd arg: params as dict (optional)
+- methods
+    - get() sends GET request
+        - 1st arg: url
+        - 2nd arg: params as dict (optional)
 
 - SEE ALSO
     - requests.readthedocs.io

@@ -6,7 +6,7 @@ built-in funcs/operators/module
     - '//' returns int (1)
     - '/' returns float
     - '**' for exponentation
-- funcs
+- built-in funcs
     - min(iterables, key=func, default=obj) (2)
         - single iterable as arg: returns its smallest elem
         - two or more args: returns smallest arg

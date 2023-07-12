@@ -1,8 +1,9 @@
-list->slice
+slice
 
 operator
 
-- creates a copy and returns new list
+- creates a copy and returns new iterable
+    - applicable for lists, strings, tuples
 - [start : end : step]
     - start: inclusive
         - if not given, defaults to zero

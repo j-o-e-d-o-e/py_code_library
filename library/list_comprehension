@@ -11,12 +11,14 @@ EXAMPLE
 (1)
 even_squares = [x ** 2 for x in range(1, 12) if x % 2 == 0]
 print(even_squares)  # prints: [4, 16, 36, 64, 100]
+
 (2)
 colours = ["red", "green", "blue"]
 things = ["pen", "tree"]
 coloured_things = [(x, y) for x in colours for y in things]
 print(coloured_things)
 # [('red', 'pen'), ('red', 'tree'), ('green', 'pen'), ('green', 'tree'), ('blue', 'pen'), ('blue', 'tree')]
+
 (3)
 matrix = [[0, 2, 4], [6, 8, 10, 12]]
 flattened = [n for row in matrix for n in row]

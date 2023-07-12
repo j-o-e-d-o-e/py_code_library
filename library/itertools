@@ -5,9 +5,9 @@ built-in module
 for creating/using iterators
     (1) islice(iterable, start, stop[, step])
         - returns iterator whose next() method returns selected values from an iterable
-        - if start is specified, will skip all preceding elements
+        - if start given, will skip all preceding elements
             - otherwise, defaults to zero
-        - if step is specified, determines how many vals are skipped between successive calls
+        - if step given, determines how many vals are skipped between successive calls
             - otherwise, defaults to 1
         -  works like a slice() on a list but returns an iterator
     (2) permutations(iterable, len)

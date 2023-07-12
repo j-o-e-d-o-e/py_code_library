@@ -12,7 +12,6 @@ data structure
     (4) may be sliced
     (5) may be assigned to
 
-
 EXAMPLE
 (1)
 tuple("123")  # ('1', '2', '3')

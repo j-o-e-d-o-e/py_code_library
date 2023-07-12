@@ -11,7 +11,7 @@ range
     - returns sequence of nums
 - range(len(list))
     - to iterate over indices of an iterable
-- pythonic way for "traditional" for-loop with counter
+- "pythonic" way for "traditional" for-loop with counter
 
 EXAMPLE
 nums = [1, 1, 3]
