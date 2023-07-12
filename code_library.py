@@ -74,7 +74,7 @@ def main():
         if user_input.startswith('s:'):
             search_term = user_input[2:]
             print("\n")
-            print_toc([entry for entry in lib if search_term in entry["tags"]])
+            print_toc([entry for entry in lib if search_term in entry["tags"].lower()])
             continue
         try:
             user_input = int(user_input)
