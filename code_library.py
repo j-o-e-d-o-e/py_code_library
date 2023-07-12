@@ -22,10 +22,10 @@ def setup_lib():
 
 def print_toc(lib):
     print(ansi_format(" PYTHON CODE LIBRARY ".center(60, "="), bold=True))
-    for entry in lib:
+    for i, entry in enumerate(lib):
         tmp = " " if entry["index"] < 10 else ""
         tmp = tmp + str(entry["index"]) + " - " + entry["title"] + " " * (35 - len(entry["title"])) + entry["tags"]
-        print(ansi_format(tmp, color=CYAN if entry["index"] % 2 == 0 else GREEN, color_bg=entry["index"] % 2 == 0))
+        print(ansi_format(tmp, color=CYAN if i % 2 != 0 else GREEN, color_bg=i % 2 != 0))
 
 
 def print_entry(entry):
@@ -70,8 +70,17 @@ def main():
     lib = setup_lib()
     print_toc(lib)
     while True:
+        user_input = input(ansi_format("\nWhat would you like to read? "))
+        if user_input.startswith('s:'):
+            search_term = user_input[2:]
+            print("\n")
+            print_toc([entry for entry in lib if search_term in entry["tags"]])
+            continue
         try:
-            user_input = int(input(ansi_format("\nWhat would you like to read? ")))
+            user_input = int(user_input)
+            if user_input < 0 or (user_input > len(lib) and user_input != 667):
+                print(ansi_format("Out of range."))
+                continue
         except ValueError:
             print(ansi_format("No valid input."))
             continue

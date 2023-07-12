@@ -2,10 +2,11 @@ enumerate
 
 build-in func
 
-- enumerate(iterable, init) adds counter to an iterable and returns it
+- enumerate(iterable, init) adds counter to given iterable
     - 1st arg: iterable
     - 2nd arg: initial val of counter (optional)
         - if not given, defaults to zero
+    - returns index-value-pairs
 
 EXAMPLE
 for count, value in enumerate("abc", 100):

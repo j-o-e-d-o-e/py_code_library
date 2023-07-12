@@ -3,16 +3,46 @@ regex
 built-in module
 
 - methods
-    - compile(pattern, flags) creates and returns a pattern obj
-    - search(pattern, str, flags) searches for matches and returns match obj
+    - findall(pattern, str, flags) (1)
+        - 1st arg: string or regex
+        - 2nd arg: to be searched
+        - 3rd arg: optional
+        - returns list of all matches
+            - if no matches found, returns empty list
+    - finditer(pattern, str, flags) (2)
+        - returns list of all matches as match objs
+    - search(pattern, str, flags)
+        - returns match obj for the 1st occurence
+            - if no match found, returns None
+    - split(pattern, str, maxsplit, flags)
+        - 3rd arg: how many splits at most (optional)
+            - by default, no limit
+            - if more splits possible, remainder of str is final elem of list
+        - returns list where str has been split at each match
+    - sub(pattern, new, str, count, flags)
+        - 2nd arg: replacement
+        - 4th arg: how many replacements (optional)
+        - replaces matches with given arg and returns new string
     - match(pattern, str, flags) gets the matched strings
-    - findall(pattern, str, flags) returns list of matches
+- match obj
+    - property 'string' holds original string
+    - methods
+        - span() returns tuple containing start and end pos
+        - group() returns part of original string with the match
+
+- SEE ALSO
+    - w3schools.com/python/python_regex.asp
 
 EXAMPLE
 import re
-
+(1)
 input = 'hello 12 hi 89. Howdy 34'
 pattern = '\d+'
 
 res = re.findall(pattern, input)
 print(res)  # ['12', '89', '34']
+(2)
+question = "What is 2 multiplied by -2 multiplied by 3?"
+nums = [[r.group(), r.start()] for r in re.finditer("(-?\d+)", question)]
+print(nums)  # [['2', 8], ['-2', 24], ['3', 41]]
+

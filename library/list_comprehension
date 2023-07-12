@@ -7,6 +7,9 @@ shorthand for for-loop
     - may be used with multiple (2) and nested (3) iterables
     - returns new list
 
+- SEE ALSO
+    - /exercism/python/making-the-grade
+
 EXAMPLE
 (1)
 even_squares = [x ** 2 for x in range(1, 12) if x % 2 == 0]

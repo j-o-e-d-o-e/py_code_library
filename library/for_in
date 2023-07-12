@@ -1,0 +1,10 @@
+for..in
+
+loop
+
+- for elem in iterable
+
+- SEE ALSO
+    - entry: enumerate
+    - entry: range
+    

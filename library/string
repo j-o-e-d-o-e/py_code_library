@@ -4,48 +4,49 @@ string
 
 - is immutable, but iterable
 - triple quotes allow for multiline strings
+- f-string allows to insert vars within curly braces (1)
 - operations
-    - may be sliced (1)
+    - may be sliced (2)
     - '+'-operator allows for concatenation
     - 'in'-operator for containment check
     - comparison operators (>, ==, etc.) compare strings lexicographically 
 - methods
-    (2) split(sep, maxsplit)
+    (3) split(sep, maxsplit)
         - 1st arg: delimiter string or regex
             - if not given, defaults to whitespace
         - 2nd arg: how many splits at most (from left to right)
             - by default, no limit
         - returns new list
         - rsplit(): from right to left
-    (3) join(iterable)
+    (4) join(iterable)
         - single arg: iterable of strings
         - string on which method is called is inserted in between each elem
         - returns new string
-    (4) replace(old, new, count)
+    (5) replace(old, new, count)
         - 1st arg: to be replaced
         - 2nd arg: replacement
         - 3rd arg: how many occurences to be replaced (optional)
             - defaults to -1, i.e. replace all occurences
-    (5) find(val, start, end) searches for specified val
+    (6) find(val, start, end) searches for specified val
         - 2nd/3rd arg: where to search (optional)
         - returns index of 1st occurence
             - if val not present, returns -1
         - rfind() starts from right
         - (almost) equivalent: index(val, start, end)
             - if val not present, raises ValueError
-    (6) count(val, start, end) returns number of occurences of specified val
+    (7) count(val, start, end) returns number of occurences of specified val
         - 2nd/3rd arg: where to count (optional)
-    (7) partition(sep) divides str into 3 parts and returns 3-tuple
+    (8) partition(sep) divides str into 3 parts and returns 3-tuple
         - if separator not present, returns 3-tuple with original and two empty str
         - rpartition() starts from right
     - format
-        - format(**kwargs) substitutes parts within curly braces and returns string (8)
+        - format(**kwargs) substitutes parts within curly braces and returns string (9)
             - multiple args (named): vals for substitution
-        - strip(chars) removes leading/trailing chars and returns string (9)
+        - strip(chars) removes leading/trailing chars and returns string (10)
             - single arg: to be removed from start and end (optional)
                 - if not specified, defaults to whitespace
             - lstrip()/rstrip() removes leading resp. trailing whitespace
-        - center(width, char) returns centered string (10)
+        - center(width, char) returns centered string (11)
             - 1st arg: width of resulting string
             - 2nd arg: used for padding (optional)
                 - defaults to whitespace
@@ -59,7 +60,7 @@ string
             - lower(): all ascii-chars
             - casefold(): all chars, including special chars
     - check
-        - startswith(val, start, end) whether str starts with val (11)
+        - startswith(val, start, end) whether str starts with val (12)
             - 1st arg: string or tupel of strings
             - endswith(val, start, end)
         - istitle(), isupper(), islower()
@@ -71,25 +72,27 @@ string
 
 EXAMPLE
 (1)
+[f"{v} at {i}" for i, v in enumerate([1, 2, 3])]  # ['1 at 0', '2 at 1', '3 at 2']
+(2)
 name = "joedoe"
 name[0:3] + 'y ' + name[3:]         # joey doe
-(2)
-name.split("oe")                    # jd
 (3)
-" ".join(["cats", "dogs", "mice"])  # cats dogs mice
+name.split("oe")                    # jd
 (4)
-"beer".replace("e", "i", 1)         # bier
+" ".join(["cats", "dogs", "mice"])  # cats dogs mice
 (5)
-"joe doe".find("oe", 3)             # 5
+"beer".replace("e", "i", 1)         # bier
 (6)
-"joe doe".count("oe")               # 2
+"joe doe".find("oe", 3)             # 5
 (7)
-"joe doe".partition("oe")           # ('j', 'oe', ' doe')
+"joe doe".count("oe")               # 2
 (8)
-"joe {last}".format(last="doe")     # joe doe
+"joe doe".partition("oe")           # ('j', 'oe', ' doe')
 (9)
-"joe doeee".strip("oe")             # joe d
+"joe {last}".format(last="doe")     # joe doe
 (10)
-" joe doe ".center(15, "#")         # ### joe doe ###
+"joe doeee".strip("oe")             # joe d
 (11)
+" joe doe ".center(15, "#")         # ### joe doe ###
+(12)
 "joedoe".endswith(('a', 'e', 'i', 'o', 'u'))  # True

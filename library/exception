@@ -5,11 +5,12 @@ exception
 - else-body is executed if no exception was raised
 
 EXAMPLE
+ls = ['1']
 try:
-    num = int(input("Guess a num: "))
-except ValueError:
-    print("Could not convert to a num")
+    num = int(ls[0])
+except (ValueError, IndexError):
+    print("Error occurred.")
 else:
-    print("Correct input: %s" % num)
+    print("%s is a num." % num)
 finally:
     print("Done.")

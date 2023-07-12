@@ -1,6 +1,6 @@
 range
 
-
+built-in func
 
 - creates a sequence of nums
 - range(start, stop, step)
