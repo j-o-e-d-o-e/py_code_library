@@ -2,26 +2,35 @@ range
 
 built-in func
 
-- creates a sequence of nums
+- indexed iterable
+    - supports all common sequence operations (like list and tuple)  
 - range(start, stop, step)
     - start: inclusive (optional)
-        -  defaults to zero
+        - defaults to zero
     - stop: exclusive (required)
     - step: defaults to 1 (optional)
     - returns sequence of nums
-- range(len(list))
-    - to iterate over indices of an iterable
-- "pythonic" way for "traditional" for-loop with counter
+        - may be sliced/reversed (1)
+- range(len(list)) allows to iterate over indices of an iterable (2)
+- "pythonic" way for "traditional" for-loop with counter (3)
+
+- SEE ALSO
+    - docs.python.org/3/library/stdtypes.html#common-sequence-operations
 
 EXAMPLE
-nums = [1, 1, 3]
-sum = 0
-for i in range(len(nums)):
-    sum += nums[i]
-print(sum)  # 5
+(1)
+res = range(1, 11, 2)[::-1]
+print(list(res))    # [9, 7, 5, 3, 1]
 
+(2)
+nums = [1, 1, 3]
 res = 0
-num = 3
-for i in range(num + 1):
+for i in range(len(nums)):
+    res += nums[i]
+print(res)          # 5
+
+(3)
+res = 0
+for i in range(1, 4):
     res += i
-print(res)  # 6
+print(res)          # 6

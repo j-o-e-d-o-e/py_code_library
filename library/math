@@ -7,13 +7,16 @@ built-in funcs/operators/module
     - '/' returns float
     - '**' for exponentation
 - built-in funcs
-    - min(iterables, key=func, default=obj) (2)
-        - single iterable as arg: returns its smallest elem
-        - two or more args: returns smallest arg
-        - key: mapping func (optional)
-        - default: if iterables is empty, returns its val (optional)
-            - if named arg is not given, throws ValueError
-    - round(number, decimal) rounds down (3)
+    - min(iterable, key, default) returns smallest elem (2)
+        - 1st arg: to be compared
+            - if single iterable, returns its smallest elem
+            - if two or more args, returns smallest arg
+        - 2nd arg (named): mapping func for comparison (optional)
+        - 3rd arg (named): default, if iterable is empty (optional)
+            - if not given and iterable empty, throws ValueError
+        - applicable for: list, dict, range, set, string, tuple
+    - max(iterable, key, default) returns biggest elem (3)
+    - round(number, decimal) rounds down (4)
         - 1st arg: float to be rounded
         - 2nd arg: how many decimal places
             - if omitted, defaults to zero
@@ -23,24 +26,25 @@ built-in funcs/operators/module
             - if empty, returns init
         - 2nd arg: initial val (optional)
             - if not given, defaults to zero
-- methods in module 'math' (4)
+- methods in module 'math' (5)
     - ceil() rounds up
 
 EXAMPLE
 (1)
 print(7 // 4)               # 1
-
 (2)
 print(min([1, 2, 3]))       # 1
 print(min(1, 2, 3))         # 1
 print(min([3, 4], [1, 2]))  # [1, 2]
 res = min([1, 2, 3], key=lambda x: x if x % 2 == 0 else 10)
 print(res)                  # 2
-
 (3)
-res = round(333.333, -2)    # 300.0
-
+ls = ["joe", "doe", "mary", "jane"]
+res = max(ls, key=lambda x: len(x))
+print(res)                  # mary
 (4)
+res = round(333.333, -2)    # 300.0
+(5)
 import math
 
 math.ceil(333.333)          # 334

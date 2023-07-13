@@ -14,7 +14,7 @@ data structure
         - if no arg, empty list
 - operators
     - '+'-operator allows to concatenate multiple lists (2)
-    - 'in (not)' checks wheter list contains elem (or not) (3)
+    - 'in (not)' checks whether list contains elem (or not) (3)
 (4) methods
     - add
         - append(val) adds val at the end (4.1)

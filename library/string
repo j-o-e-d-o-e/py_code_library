@@ -7,7 +7,8 @@ data type
 - f-string allows to insert vars within curly braces (1)
 - operations
     - may be sliced (2)
-    - '+'-operator allows for concatenation
+    - '+' and '+='-operators allow for concatenation
+    - '*'-operator allows to multiply string
     - 'in'-operator for containment check
     - comparison operators (>, ==, etc.) compare strings lexicographically 
 - methods
