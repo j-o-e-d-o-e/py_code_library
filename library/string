@@ -1,6 +1,6 @@
 string
 
-
+data type
 
 - is immutable, but iterable
 - triple quotes allow for multiline strings

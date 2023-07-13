@@ -1,6 +1,6 @@
 type conversion
 
-built-in funcs
+built-in funcs/data type
 
 (1) int(val, base) converts str to an int
     - 1st arg: string, bytes-like obj or real num

@@ -3,7 +3,7 @@ slice
 operator
 
 - creates a copy and returns new iterable
-    - applicable for lists, strings, tuples
+    - applicable for: list, string, tuple
 - [start : end : step]
     - start: inclusive
         - if not given, defaults to zero
@@ -20,6 +20,7 @@ operator
 
 - SEE ALSO
     - geeksforgeeks.org/python-list-slicing/
+    - /exercism/python/minesweeper
 
 EXAMPLE
 ls = [1, 2, 3, 4, 5]

@@ -1,6 +1,6 @@
 type
 
-built-in func
+built-in func/data type
 
 - type(obj) returns the given obj's type
 
