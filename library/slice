@@ -2,7 +2,7 @@ slice
 
 operator
 
-- creates a copy and returns new iterable
+- slices and returns new iterable
     - applicable for: list, string, tuple
 - [start : end : step]
     - start: inclusive
@@ -15,7 +15,8 @@ operator
         - 1st elem: -N (N: length of list) 
         - last elem: -1
 - [::-1] reverses list
-- on right hand-side of assignment
+- [::] creates shallow copy
+- on left hand-side of assignment
     - replace elems of list with elems of another list
 
 - SEE ALSO

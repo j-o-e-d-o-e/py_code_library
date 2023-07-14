@@ -3,54 +3,70 @@ dictionary
 data structure
 
 - stores key-value-pairs (key: val)
-    - keys must be unique & immutable: int, float, string, tuple, bool
-    - vals may be of any type
-- no guaranteed order
+    - keys must be unique & immutable: number, string, tuple, bool
+        - may not be: list, dict, set
+    - vals may be of any type, including nested data structures
+- since Python 3.7, order is guaranteed to be according to insertion
 - creation
-    - literal within curly braces and key-value-pairs
-    - constructor dict()
-        - single arg: iterable
-- methods
-    (1) add: dict[key] = val
-    (2) retrieve
-        - 'dict[key]' returns val for given key
-        - 'dict.get(key, default)' returns val for given key if key is in dict, else default
-    (3) in-operator checks whether dict contains key/val
-    (4) remove: del(dict[key])
-    (5) iterables
-        - 'dict.items()' returns list of key-val-pairs
-        - 'dict.keys()' returns list of keys
-        - 'dict.values()' returns list of vals
+    (1) literal with curly braces and key-value-pairs
+    (2) constructor dict()
+        - single arg: iterable with elems as iterable of length 2
+        - one or more args: each as 'key=val'
+            - key must be valid binding
+- methods/operations
+    (3) add/update: dict[key] = val
+    (4) retrieve
+        - dict[key] returns val for given key
+            - if not present, raises KeyError
+        - get(key, default) returns val for given key if key is present, else default
+            - 2nd arg: optional
+    (5) remove
+        - del(dict[key]) removes key-value-pair for given key
+            - if not present, raises KeyError
+        - pop(key, default) removes pair and returns val if key is present, else default
+            - 2nd arg: optional
+    (6) in-operator checks whether dict contains key/val
+    (7) iterables
+        - items() returns list of key-val-pairs
+        - keys() returns list of keys
+            - alternatively, looping over dict itself returns its keys        
+        - values() returns list of vals
+
+- SEE ALSO
+    - /exercism/python/inventory-management
 
 EXAMPLE
-dict = {1: 'apple', 2: 'berry'}
 (1)
-dict[3] = "cherry"
+res = {1: 'apple', 2: 'berry'}              # {1: 'apple', 2: 'berry'}
 (2)
-# print(d[0])  # KeyError
-print(dict.get(0, "apple"))  # apple
+res = dict([(1, 'apple'), (2, 'berry')])    # {1: 'apple', 2: 'berry'}
+res = dict(one="apple", two="berry")        # {'one': 'apple', 'two': 'berry'}
 (3)
-print(1 in dict)  # True
-print("apple" in dict.values())  # True
+res[3] = "cherry"                           # {1: 'apple', 2: 'berry', 3: 'cherry'}
 (4)
-del [dict[3]]
+# val = res[0]                              # KeyError
+val = res.get(2, "apple")                   # berry
 (5)
-for item in dict.items():
-    print(item, end=" ")  # (1, 'apple') (2, 'berry')
+del [res[3]]                                # {1: 'apple', 2: 'berry'}
+val = res.pop(3, "apple")                   # apple
+(6)
+print(1 in res)                             # True
+print("apple" in res.values())              # True
+(7)
+res = {1: 'apple', 2: 'berry'}
+for item in res.items():
+    print(item, end=" ")                    # (1, 'apple') (2, 'berry')
+for key in res.keys():
+    print(key, end=" ")                     # 1 2
+for key in res:
+    print(key, res[key], end=" ")           # 1 apple 2 berry
+for val in res.values():
+    print(val, end=" ")                     # apple berry
 
-for key in dict:
-    print(key, dict[key], end=" ")  # 1 apple 2 berry
-
-for key in dict.keys():
-    print(key, end=" ")  # 1 2
-
-for val in dict.values():
-    print(val, end=" ")  # apple berry
-
-dict = {}
+res = {}
 for word in "She loves you yeah yeah yeah".split():
-    if word in dict:
-        dict[word] += 1
+    if word in res:
+        res[word] += 1
     else:
-        dict[word] = 1
-print(dict)  # {'She': 1, 'loves': 1, 'you': 1, 'yeah': 3}
+        res[word] = 1
+print(res)                                  # {'She': 1, 'loves': 1, 'you': 1, 'yeah': 3}

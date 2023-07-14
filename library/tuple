@@ -4,9 +4,10 @@ data structure
 
 immutable, indexed iterable
 - creation
-    (1) literal in braces
+    (1) literal with parenthesis
         - extra comma allows for tuple with single val
         - allows to add multiple iterables, including dicts with keys and vals
+        - generally, parenthesis not required, but more readable
     (2) constructor tuple(iterable)
         - arg: single iterable (optional)
             - may be: dict(only keys), list, set, string, another tuple
@@ -25,6 +26,8 @@ immutable, indexed iterable
             - if val not present, raises ValueError
     - count(val, start, end) returns number of occurences of specified val
         - 2nd/3rd arg: where to count (optional)
+    - copy() returns shallow copy
+        - alternatively, use slicing
 
 - SEE ALSO
     - docs.python.org/3/library/stdtypes.html#common-sequence-operations
