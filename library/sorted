@@ -10,6 +10,9 @@ built-in func
         - if not given, sorts in ascending order
     - returns new list in de-/ascending order
 
+- SEE ALSO
+    - /exercism/python/tournament (mulitple keys)
+
 EXAMPLE
 nums = [0, 3, -3, 6]
 res = sorted(nums, reverse=True)

@@ -25,6 +25,7 @@ data structure
     - remove
         - remove(val) removes 1st occurrence of given val (4.4)
             - if val not present, raises ValueError
+            - returns None
         - pop(i) removes and returns elem at given index (4.5)
             - single arg: index (optional)
                 - if not given, defaults to last

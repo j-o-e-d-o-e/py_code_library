@@ -2,9 +2,10 @@ generator
 
 
 
-- func containing 'yield'
-- remembers last executed 'yield' and starts thereafter for next iterator-call
-- next(generator)/generator.__next__() returns next item    
+- func containing 'yield' (instead of 'return')
+    - if it yields, func is paused and control is transferred back to caller
+- remembers state (last executed 'yield') and starts thereafter for next iterator-call
+- next(generator)/generator.__next__() returns next item
 
 EXAMPLE
 (1)

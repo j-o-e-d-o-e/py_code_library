@@ -9,7 +9,7 @@ immutable, indexed iterable
         - allows to add multiple iterables, including dicts with keys and vals
         - generally, parenthesis not required, but more readable
     (2) constructor tuple(iterable)
-        - arg: single iterable (optional)
+        - single arg: iterable (optional)
             - may be: dict(only keys), list, set, string, another tuple
             - if not given, empty tuple
 - operations

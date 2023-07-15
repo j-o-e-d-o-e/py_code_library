@@ -8,10 +8,14 @@ built-in func
     - start: inclusive (optional)
         - defaults to zero
     - stop: exclusive (required)
-    - step: defaults to 1 (optional)
+    - step: in-/decrement (optional)
+        - if not given, defaults to 1
     - returns sequence of nums
     - may be sliced
-(1) range(start, stop)[::-1] returns reversed sequence
+(1) 3 ways to reverse sequence
+        - range()[::-1]
+        - reversed(range())
+        - swap start and stop and use decrement as step
 (2) range(len(list)) allows to iterate over indices of an iterable
 (3) "pythonic" way for "traditional" for-loop with counter
 
@@ -20,8 +24,11 @@ built-in func
 
 EXAMPLE
 (1)
-res = range(1, 11, 2)[::-1]
-print(list(res))    # [9, 7, 5, 3, 1]
+res1 = range(1, 11, 2)[::-1]
+res2 = reversed(range(1, 11, 2))
+res3 = range(9, 0, -2)
+print(list(res1))                               # [9, 7, 5, 3, 1]
+print(list(res1) == list(res2) == list(res3))   # True
 
 (2)
 nums = [1, 1, 3]

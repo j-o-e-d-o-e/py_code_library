@@ -2,7 +2,7 @@ list comprehension
 
 shorthand for for-loop
 
-- [statement for elem in iterable if-statement]
+- [expression for elem in iterable if-statement]
     - if-statement optional (1)
     - may be used with multiple (2) and nested (3) iterables
     - returns new list

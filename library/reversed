@@ -1,0 +1,9 @@
+reversed
+
+built-in func
+
+- reversed(iterable) returns reversed iterable
+
+EXAMPLE
+res = reversed(range(1, 4))
+print(list(res))  # [3, 2, 1]
