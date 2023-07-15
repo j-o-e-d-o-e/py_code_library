@@ -10,9 +10,10 @@ built-in func
     - stop: exclusive (required)
     - step: defaults to 1 (optional)
     - returns sequence of nums
-        - may be sliced/reversed (1)
-- range(len(list)) allows to iterate over indices of an iterable (2)
-- "pythonic" way for "traditional" for-loop with counter (3)
+    - may be sliced
+(1) range(start, stop)[::-1] returns reversed sequence
+(2) range(len(list)) allows to iterate over indices of an iterable
+(3) "pythonic" way for "traditional" for-loop with counter
 
 - SEE ALSO
     - docs.python.org/3/library/stdtypes.html#common-sequence-operations
