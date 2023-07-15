@@ -21,7 +21,7 @@ data structure
         - get(key, default) returns val for given key if key is present, else default
             - 2nd arg: optional
     (5) remove
-        - del(dict[key]) removes key-value-pair for given key
+        - del dict[key] removes key-value-pair for given key
             - if not present, raises KeyError
         - pop(key, default) removes pair and returns val if key is present, else default
             - 2nd arg: optional
@@ -34,6 +34,7 @@ data structure
 
 - SEE ALSO
     - /exercism/python/inventory-management
+    - /exercism/python/say
 
 EXAMPLE
 (1)

@@ -7,18 +7,28 @@ built-in module
     (1) class syntax
     (2) functional syntax
 
+- SEE ALSO
+    - /exercism/python/food-chain
+
 EXAMPLE
 from enum import Enum
 (1)
 class Color(Enum):
-    RED = 1
-    GREEN = 2
-    BLUE = 3
+    RED = (255, 0, 0)
+    GREEN = (0, 255, 0)
+    BLUE = (0, 0, 255)
+
+colors = list(Color)
+print(colors[0].value)          # (255, 0, 0)
+for color in colors:
+    print(color, color.value)   # Color.RED(255, 0, 0)
+                                # Color.GREEN(0, 255, 0)
+                                # Color.BLUE(0, 0, 255)
 (2)
 Color = Enum('Color', ['RED', 'GREEN', 'BLUE'])
 
-print(Color["RED"].value)   # 1
+print(Color["RED"].value)       # 1
 for c in Color:
-    print(c, c.value)       # Color.RED 1
-                            # Color.GREEN 2
-                            # Color.BLUE 3
+    print(c, c.value)           # Color.RED 1
+                                # Color.GREEN 2
+                                # Color.BLUE 3

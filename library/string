@@ -42,7 +42,10 @@ data type
         - rpartition() starts from right
     - format
         - format(**kwargs) substitutes parts within curly braces and returns string (9)
-            - multiple args (named): vals for substitution
+            - multiple args (optionally named): vals for substitution
+                - if args named, substitution by names, otherwise by indices
+                - each placeholder may contain format styles
+                - e.g. {0: >3}: 1st arg right justified, width of 3
         - strip(chars) removes leading/trailing chars and returns string (10)
             - single arg: to be removed from start and end (optional)
                 - if not specified, defaults to whitespace
@@ -70,6 +73,7 @@ data type
 
 - SEE ALSO
     - docs.python.org/3/library/stdtypes.html#string-methods
+    - /exercism/python/tournament (format(**kwargs))
 
 EXAMPLE
 (1)

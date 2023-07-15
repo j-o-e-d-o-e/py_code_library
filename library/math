@@ -3,9 +3,11 @@ math
 built-in funcs/operators/module
 
 - operators
-    - '//' returns int (1)
-    - '/' returns float
-    - '**' for exponentation
+    - // returns int (1)
+    - / returns float
+    - ** for exponentation
+    - +=, -=, /=, *=, %= for assignments
+        - ++, -- are not supported
 - built-in funcs
     - min(iterable, key, default) returns smallest elem (2)
         - 1st arg: to be compared
@@ -28,6 +30,7 @@ built-in funcs/operators/module
             - if not given, defaults to zero
 - methods in module 'math' (5)
     - ceil() rounds up
+- for readability only: nums may be written in groups, e.g. 1_000_000
 
 EXAMPLE
 (1)

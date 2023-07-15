@@ -1,0 +1,19 @@
+generator->next
+
+built-in func
+
+- next(iterator, default) returns next item from iterator
+    - 1st arg: func
+    - 2nd arg: optional
+        - if given and iterator is exhausted, it is returned
+        - if not given and exhausted, raises StopIteration
+    - useful for finding 1st matching elem of a list (1)
+
+- SEE ALSO
+    - /exercism/python/tournament
+
+EXAMPLE
+(1)
+ls = [("mary", "jane"), ("joe", "doe")]
+p = next((name for name in ls if name[0].startswith("j")), 0)
+print(p)  # ('joe', 'doe')

@@ -3,7 +3,9 @@ ternary
 operator
 
 - a if <condition is true> else b
+- may be chained
 
 EXAMPLE
-a = []
-b = "empty" if not a else "not empty"
+team_one = "win"
+team_two = "loss" if team_one == "win" else "win" if team_one == "loss" else "draw"
+print(team_two)  # loss
