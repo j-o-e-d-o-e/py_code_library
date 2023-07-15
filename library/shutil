@@ -1,6 +1,6 @@
 shutil
 
-built-in module, "shell utilies"
+built-in module "shell utilies"
 
 - methods, e.g.
     - copy(src, dest) copies file/folder at source to destination
