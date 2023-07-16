@@ -1,0 +1,25 @@
+global
+
+
+
+(1) to change val of a global variable inside a func
+    - vars created outside of a func are known as global vars
+(2) to create a global variable inside a func
+
+EXAMPLE
+(1)
+x = "joe"
+
+def func():
+  global x
+  x = "doe"
+
+func()
+print(x)  # doe
+(2)
+def func():
+  global x
+  x = "joe"
+
+func()
+print(x)  # joe

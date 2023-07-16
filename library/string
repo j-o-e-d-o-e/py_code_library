@@ -66,6 +66,8 @@ data type
     - check
         - startswith(val, start, end) whether str starts with val (12)
             - 1st arg: string or tupel of strings
+            - 2nd/3rd args: where to check (optional)
+                - by default, whole string
             - endswith(val, start, end)
         - istitle(), isupper(), islower()
         - startswith(val, start, end), endswith(val, start, end)

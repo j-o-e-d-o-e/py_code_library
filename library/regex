@@ -2,6 +2,7 @@ regex
 
 built-in module
 
+- pattern string: prefixed with 'r'
 - methods
     - findall(pattern, str, flags) (1)
         - 1st arg: string or regex
@@ -19,7 +20,7 @@ built-in module
             - by default, no limit
             - if more splits possible, remainder of str is final elem of list
         - returns list where str has been split at each match
-    - sub(pattern, new, str, count, flags)
+    - sub(pattern, new, str, count, flags) (3)
         - 2nd arg: replacement
         - 4th arg: how many replacements (optional)
         - replaces matches with given arg and returns new string
@@ -31,18 +32,21 @@ built-in module
         - group() returns part of original string with the match
 
 - SEE ALSO
-    - w3schools.com/python/python_regex.asp
+    - /exercism/python/word-count    
 
 EXAMPLE
 import re
 (1)
-input = 'hello 12 hi 89. Howdy 34'
-pattern = '\d+'
-
-res = re.findall(pattern, input)
+phrase = 'hello 12 hi 89. Howdy 34'
+res = re.findall(r'\d+', phrase)
 print(res)  # ['12', '89', '34']
+
 (2)
 question = "What is 2 multiplied by -2 multiplied by 3?"
-nums = [[r.group(), r.start()] for r in re.finditer("(-?\d+)", question)]
+nums = [[r.group(), r.start()] for r in re.finditer(r"(-?\d+)", question)]
 print(nums)  # [['2', 8], ['-2', 24], ['3', 41]]
 
+(3)
+word = "''hey, joe won't do it''"
+word = re.sub(r"^'+|[^(a-z0-9)]+$", "", word.lower())
+print(word)  # hey, joe won't do it

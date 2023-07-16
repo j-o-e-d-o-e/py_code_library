@@ -2,10 +2,18 @@ type
 
 built-in func/data type
 
-- type(obj) returns the given obj's type
+(1) type(obj) returns the given obj's type
+(2) isinstance(obj, type) checks whether given obj is of given type
 
 EXAMPLE
+(1)
 print(type((1, 2, 3)))              # <class 'tuple'>
 print(type([1, 2, 3]))              # <class 'list'>
 print(type({1, 2, 3}))              # <class 'set'>
 print(type({1: 1, 2: 2, 3: 3}))     # <class 'dict'>
+
+(2)
+from types import FunctionType
+
+func = (lambda ls: ls + [ls[-2]])
+print(isinstance(func, FunctionType))
