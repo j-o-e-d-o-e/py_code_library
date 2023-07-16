@@ -7,6 +7,9 @@ class
     - if not set, string representation of obj is used
     - e.g. <__main__.Human object at 0x7f12da85ab90>
 
+- SEE ALSO
+    - /exercism/python/ellens-alien-game
+
 EXAMPLE
 class Human:
     def __init__(self, name, age):
