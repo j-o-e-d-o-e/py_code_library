@@ -1,0 +1,11 @@
+string->string
+
+built-in module
+
+- contains constants
+
+EXAMPLE
+import string
+
+res = string.digits  # 0123456789
+res = string.ascii_letters # abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
