@@ -16,6 +16,7 @@ boolean
         - only useful in conjunction with None
         - id(obj) returns unique identity of given obj (built-in func)
     - in (not): check containment, e.g. char in string
+    - &=/|=: boolean combined with assignment
 - multiple comparisons in one line possible (chaining)
 
 EXAMPLE
@@ -24,3 +25,7 @@ print(a is b and a is c)# True
 
 a, b, c = 1, 2, 3
 print(a < b < c)        # True
+
+res = False
+res &= True  # False
+res |= True  # True

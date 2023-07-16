@@ -35,6 +35,7 @@ data structure
 - SEE ALSO
     - /exercism/python/inventory-management
     - /exercism/python/say
+    - /exercism/python/sieve
 
 EXAMPLE
 (1)
@@ -55,8 +56,8 @@ print(1 in res)                             # True
 print("apple" in res.values())              # True
 (7)
 res = {1: 'apple', 2: 'berry'}
-for item in res.items():
-    print(item, end=" ")                    # (1, 'apple') (2, 'berry')
+for key, val in res.items():
+    print((key, val), end=" ")              # (1, 'apple') (2, 'berry')
 for key in res.keys():
     print(key, end=" ")                     # 1 2
 for key in res:

@@ -2,24 +2,28 @@ asterisk
 
 destructing operator
 
+- operator for unpacking iterables
+    - allows for multiple assignments
+    - if num of vars and num of vals do not match, raises ValueError
 - in conjunction with funcs
-    (1) single asterisk to assign
-        - multiple vals to a single tuple as an arg of a func (1.1)
-        - elems of an iterable/tuple to multiple args of a func (1.2)
-    (2) double asterisk to assign
-        - multiple keyword-value-pairs to a single dict (2.1)
-        - vals of a dictionary to multiple args (2.2)
+    (1) *args
+        - pack multiple vals into a single tuple as an arg of a func (1.1)
+        - unpack elems of an iterable/tuple into multiple args of a func (1.2)
+    (2) **kwargs (for named keyword args)
+        - pack multiple keyword-value-pairs into a single dict (2.1)
+        - unpack vals of a dictionary into multiple args (2.2)
 - in conjunction with iterables
-    (3) single asterisk to assign
-        - multiple vals to a single list (3.1)
-        - elems of a list to multiple vars (3.2)
+    (3) *
+        - pack multiple vals into a single list (3.1)
+        - unpack elems of a list into multiple vars (3.2)
             - useful e.g. to extract 1st and last elem
-    (4) double asterisk to assign
-        - multiple vals (keyword-args/dicts) to a single dict (4.1)
-        - vals of a dict to multiple vars (4.2)
+    (4) **
+        - pack multiple vals (keyword-args/dicts) into a single dict (4.1)
+        - unpack vals of a dict into multiple vars (4.2)
 
 - SEE ALSO
     - /bas.codes/posts/python-asterisks
+    - /exercism/python/locomotive-engineer
     - /exercism/python/triangle
 
 EXAMPLE

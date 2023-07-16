@@ -5,6 +5,10 @@ data structure
 - unordered, unindexed iterable containing unique elems
     - do not support slicing nor sorting
     - frozenset is additionally immutable, i.e. add()/remove() not available
+- set-operators
+    - -, -=, ^, ^=, &,&=, |, |=, <=, >=
+    - only applicable if all operands are sets
+        - if not, use corresponding methods (see below)
 (1) creation
     - literal with curly braces
         - only immutable data types, otherwise raises TypeError
@@ -21,16 +25,16 @@ data structure
     - iterables (2.2)
         - difference(iterables) returns new set containing elems that are in invoked set but not in args
             - one or more arg(s): iterables
-            - equivalent: operator '-' (only if all operands are sets)
+            - equivalent: operator '-'
             - difference_update(iterable) removes all elems of another set from this set (in-place)
         - symmetric_difference(iterable) returns new set with elems that are in invoked set or given iterable, but not in both
-            - equivalent: opreator '^' (if both operands are sets)
+            - equivalent: opreator '^'
             - for more args: seemingly odd behaviour
         - intersection(iterables) returns new set containing common elems
-            - equivalent: operator '&' (all operands are sets)
+            - equivalent: operator '&'
             - intersection_update(iterable) modifies invoked set in-place
         - union(iterables) returns new set containing elems that are in either iterables
-            - equivalent: operator '|' (all operands are sets)
+            - equivalent: operator '|'
             - update(iterables) modifies invoked set in-place according to union()
     - checks
         - isdisjoint(iterable) returns True if two iterables have null intersection
@@ -41,6 +45,8 @@ data structure
         - 'in (not)' checks whether set contains elem (or not)
     - copy() returns shallow copy
 
+- SEE ALSO
+    - /exercism/python/cater-waiter
 
 EXAMPLE
 (1)
