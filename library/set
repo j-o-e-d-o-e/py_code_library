@@ -3,35 +3,44 @@ set
 data structure
 
 - unordered, unindexed iterable containing unique elems
+    - do not support slicing nor sorting
     - frozenset is additionally immutable, i.e. add()/remove() not available
 (1) creation
     - literal with curly braces
         - only immutable data types, otherwise raises TypeError
     - construtor set()
-        - single arg: iterable
+        - single arg: iterable (optional)
+            - if not given, empty set
 (2) methods
     - elementwise (2.1)
-        - add() adds an elem
-        - discard() removes an elem
-            - if not in set, do nothing
-        - remove() removes an elem
-            - if not in set, raise KeyError
-        - copy() returns shallow copy
+        - add(val) adds val
+        - discard(val) removes val
+            - if not in set, does nothing
+        - remove(val) removes val
+            - if not in set, raises KeyError
     - iterables (2.2)
-        - difference() returns new set containing elems that are in invoked set but not in args
+        - difference(iterables) returns new set containing elems that are in invoked set but not in args
             - one or more arg(s): iterables
-            - equivalent: operator '-'
-            - difference_update() removes all elems of another set from this set (in-place)
-        - intersection() returns new set containing common elems
-            - equivalent: operator '&'
-            - intersection_update() modifies invoked set in-place
-        - union() returns new set containing elems that are in either iterables
-            - equivalent: operator '|'
-            - update() modifies invoked set in-place according to union()
+            - equivalent: operator '-' (only if all operands are sets)
+            - difference_update(iterable) removes all elems of another set from this set (in-place)
+        - symmetric_difference(iterable) returns new set with elems that are in invoked set or given iterable, but not in both
+            - equivalent: opreator '^' (if both operands are sets)
+            - for more args: seemingly odd behaviour
+        - intersection(iterables) returns new set containing common elems
+            - equivalent: operator '&' (all operands are sets)
+            - intersection_update(iterable) modifies invoked set in-place
+        - union(iterables) returns new set containing elems that are in either iterables
+            - equivalent: operator '|' (all operands are sets)
+            - update(iterables) modifies invoked set in-place according to union()
     - checks
-        - isdisjoint() returns True if two sets have a null intersection
-        - issubset() returns True if given set contains this set
-        - issuperset() returns True if this set contains given set
+        - isdisjoint(iterable) returns True if two iterables have null intersection
+        - issubset(iterable) returns True if given iterable contains this set
+            - equivalent: operator '<='
+        - issuperset(iterable) returns True if this set contains given iterable
+            - equivalent: operator '>='
+        - 'in (not)' checks whether set contains elem (or not)
+    - copy() returns shallow copy
+
 
 EXAMPLE
 (1)

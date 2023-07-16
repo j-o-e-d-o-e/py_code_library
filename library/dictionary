@@ -2,7 +2,7 @@ dictionary
 
 data structure
 
-- stores key-value-pairs (key: val)
+- iterable that stores key-value-pairs (key: val)
     - keys must be unique & immutable: number, string, tuple, bool
         - may not be: list, dict, set
     - vals may be of any type, including nested data structures

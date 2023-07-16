@@ -32,6 +32,7 @@ immutable, indexed iterable
 - SEE ALSO
     - docs.python.org/3/library/stdtypes.html#common-sequence-operations
     - /exercism/python/tisbury-treasure-hunt
+
 EXAMPLE
 (1)
 t = (1, 2, 3)           # (1, 2, 3)
