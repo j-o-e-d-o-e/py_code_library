@@ -1,14 +1,17 @@
 enum
 
-built-in module
+built-in module/data type
 
 - iterable collection of constants
+    - by default, constants are assigned to vals: 1, 2, ...
 - creation via
     (1) class syntax
     (2) functional syntax
+- useful in conjunction with pattern matching (like switch-case)
 
 - SEE ALSO
     - /exercism/python/food-chain
+    - /exercism/python/spiral-matrix
 
 EXAMPLE
 from enum import Enum
@@ -25,10 +28,16 @@ for color in colors:
                                 # Color.GREEN(0, 255, 0)
                                 # Color.BLUE(0, 0, 255)
 (2)
-Color = Enum('Color', ['RED', 'GREEN', 'BLUE'])
+Direction = Enum('Direction', ['RIGHT', 'LEFT', 'UP', 'DOWN'])
 
-print(Color["RED"].value)       # 1
-for c in Color:
-    print(c, c.value)           # Color.RED 1
-                                # Color.GREEN 2
-                                # Color.BLUE 3
+direction = Direction(3)
+match direction:
+    case Direction.RIGHT:
+        print(f"RIGHT: {direction.value}")
+        print(direction.value)
+    case Direction.LEFT:
+        print(f"LEFT: {direction.value}")
+    case Direction.UP:
+        print(f"UP: {direction.value}") # UP: 3
+    case Direction.DOWN:
+        print(f"DOWN: {direction.value}")

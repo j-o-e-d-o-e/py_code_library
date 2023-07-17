@@ -1,6 +1,6 @@
 boolean
 
-
+operators
 
 - vals: 'True' and 'False'
 - any obj can be tested for its truth value

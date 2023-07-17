@@ -2,25 +2,39 @@ class
 
 
 
-- constructor __init__
-- method __str__
-    - if not set, string representation of obj is used
-    - e.g. <__main__.Human object at 0x7f12da85ab90>
+- constructor
+    -  __init__(self, *args)
+        - 1st arg: newly created obj
+            - automatically passed, ignored by caller
+        - *args: passed by caller (optional)
+- attributes of
+    - class must be declared in class-body itself
+    - objs are only declared in constructor on self
+- method declarations for
+    - class:
+    - objs: 1st arg always self (automatically passed)
+- "dunder" methods (double underscore)
+    -  __str__(self)
+        - if not overwritten, address of obj is returned
 
 - SEE ALSO
     - /exercism/python/ellens-alien-game
 
 EXAMPLE
 class Human:
+    greeting = "Hi there"
+
     def __init__(self, name, age):
         self.name = name
         self.age = age
 
     def introduce(self):
-        print("Hi there, I am " + self.__str__())
+        print(f"{Human.greeting}, I am " + self.__str__())
 
     def __str__(self):
         return f"{self.name}, {self.age} years old"
 
+
 mary = Human("Mary", 36)
 mary.introduce()  # Hi there, I am Mary, 36 years old
+print(f"{Human.greeting}, I am Joe.")  # Hi there, I am Joe.

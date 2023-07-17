@@ -49,6 +49,10 @@ EXAMPLE
 (1)
 ls = [0] * 3        # [0, 0, 0]
 
+size = 2
+[[0] * size for _ in range(size)]  # [[0, 0], [0, 0]]
+# res = [[0] * size] * size  # deeper levels referenced
+
 ls = list("joe doe")
 print(ls)           # ['j', 'o', 'e', ' ', 'd', 'o', 'e']
 
