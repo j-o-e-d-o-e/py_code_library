@@ -9,13 +9,12 @@ shorthand for for-loop
 - useful to map (filtered) elems of given 
     (1) iterable to single val
         - equivalent to: list(filter(map()))
-    (2) nested iterable to single val
-    (3) iterable to multiple vals
-    (4) multiple iterables to single val (permutation)
-    (5) multiple iterables to multiple vals (permutation)
+    (2) (nested) iterable to multiple vals
+    (3) multiple iterables to multiple vals (permutation)
 
 - SEE ALSO
     - /exercism/python/making-the-grade
+    - /exercism/python/matrix
 
 EXAMPLE
 (1)
@@ -29,16 +28,18 @@ matrix = [[0, 2, 4], [6, 8, 10, 12]]
 res = [n for row in matrix for n in row]
 print(res)  # [0, 2, 4, 6, 8, 10, 12]
 
-(3)
+matrix = [[0, 2, 4], [6, 8, 10]]
+res = [[matrix[r][c] for r in range(len(matrix))] for c in range(len(matrix[0]))]
+print(res)  # [[0, 6], [2, 8], [4, 10]]
+
 res = [j for i in [1, 2] for j in (i, i)]
 print(res)  # [2, 2, 1, 1]
 
-(4)
+(3)
 colours = ["red", "green", "blue"]
 things = ["pen", "tree"]
 res = [f"{x} {y}" for x in colours for y in things]
 print(res)  # ['red pen', 'red tree', 'green pen', 'green tree', 'blue pen', 'blue tree']
 
-(5)
 res = [z for x in colours for y in things for z in (x, y)]
 print(res)  # ['red', 'pen', 'red', 'tree', 'green', 'pen', 'green', 'tree', 'blue', 'pen', 'blue', 'tree']

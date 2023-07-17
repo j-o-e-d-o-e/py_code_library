@@ -2,7 +2,7 @@ reversed
 
 built-in func
 
-- reversed(iterable) returns reversed iterable
+- reversed(iterable) returns reversed iterator
 
 EXAMPLE
 res = reversed(range(1, 4))
