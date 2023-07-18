@@ -5,7 +5,7 @@ shorthand for for-loop
 - anonymous generator func (like lambda for regular func with 'return')
     - single statement yields implicitly (1)
 - (expression for elem in iterable if-statement)
-    - if-statement optional
+    - if-statement is optional
     - similar to list comprehension, but parenthesis instead of square brackets (2)
 
 EXAMPLE

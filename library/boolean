@@ -6,8 +6,6 @@ operators
 - any obj can be tested for its truth value
 - falsy values (convert to 'False'): False, 0, None, empty string/list/dict/tuple/set/range
     - truthy values: all other vals
-    - NaN: any ordered comparison (<, >) of a num to Nan is False
-        - NaN never compares equal to NaN, i.e. NaN == NaN returns False
 - operators
     - and: logical AND
     - or: logical OR

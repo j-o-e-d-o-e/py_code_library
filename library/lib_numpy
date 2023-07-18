@@ -18,16 +18,16 @@ provides multidimensional array objs and methods, e.g. for open-cv
         - arr[:1, 0:2] return first three elems from 1st list
     - arr1 + arr2 sums up arrays elementwise and returns new array
         - similarly: subtraction, multiplication and division
-(4) methods on an array objs
+(4) methods on ndarray
     - min()/max() returns min resp. max
     - sum() returns sum of elems over given axis
         - axis 0: columns, axis 1: rows
         - e.g. arr.sum(axis=0) returns sum of each column
     - reshape(x, y) reshapes array with x rows and y columns
     - ravel() flattens array
-(5) static methods
-    - np.hstack((a, b)) stacks arrays a and b horizontally
-    - np.vstack((a, b)) stacks vertically
+(5) methods on np
+    - hstack((a, b)) stacks arrays a and b horizontally
+    - vstack((a, b)) stacks vertically
 
 - SEE ALSO
     - numpy.org

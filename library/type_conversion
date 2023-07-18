@@ -7,7 +7,7 @@ built-in funcs/data type
     - 2nd arg: e.g. 2 for bin, 10 for dec (optional)
         - if not specified, defaults to 10
     - if not convertable, raises specific Error
-(2) float(val) converts int, str to float
+(2) float(val) converts int/str to float
 (3) str(val) converts int to string
 (4) chr(val) converts int to its corresponding ascii-char
 (5) ord(val) converts char to its ascii-num

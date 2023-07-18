@@ -10,6 +10,9 @@ built-in module
 - datetime.now() returns datetime-obj with current local date and time
 - datetime.isocalendar() returns a named tuple containing ISO year, week number, and weekday
 
+- SEE ALSO
+    - /prog/py/http_plotter
+
 EXAMPLE
 from datetime import datetime
 

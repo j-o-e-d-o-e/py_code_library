@@ -2,7 +2,7 @@ tuple
 
 data structure
 
-immutable, indexed iterable
+- immutable, indexed iterable
 - creation
     (1) literal with parenthesis
         - extra comma allows for tuple with single val

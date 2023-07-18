@@ -3,8 +3,7 @@ list comprehension
 shorthand for for-loop
 
 - [expression for elem in iterable if-statement]
-    - if-statement optional (1)
-    - may be used with multiple (2) and nested (3) iterables
+    - if-statement is optional (1)
     - returns new list
 - useful to map (filtered) elems of given 
     (1) iterable to single val

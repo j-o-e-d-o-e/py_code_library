@@ -4,7 +4,7 @@ import
 
 to import modules
     (1) import 'module'
-    (2) from 'module import 'function' as 'name'
+    (2) from 'module import 'func/obj' as 'name'
 
 EXAMPLE
 (1)

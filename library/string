@@ -2,7 +2,7 @@ string
 
 data type
 
-- is immutable, but iterable
+- immutable, indexed iterable
 - triple quotes allow for multiline strings
 - f-string allows to insert vars within curly braces (1)
 - operations

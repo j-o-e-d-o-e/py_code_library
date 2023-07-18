@@ -16,8 +16,7 @@ operator
         - last elem: -1
 - [::-1] reverses list
 - [::] creates shallow copy
-- on left hand-side of assignment
-    - replace elems of list with elems of another list
+- on left hand-side of assignment, it replace elems of list with elems of another list
 
 - SEE ALSO
     - geeksforgeeks.org/python-list-slicing/

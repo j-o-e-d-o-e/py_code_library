@@ -7,4 +7,7 @@ loop
 - SEE ALSO
     - entry: enumerate
     - entry: range
-    
+
+EXAMPLE
+for letter in "joe doe":
+    print(letter, end=" ")  # j o e   d o e

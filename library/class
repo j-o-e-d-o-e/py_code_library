@@ -5,15 +5,15 @@ class
 - constructor
     -  __init__(self, *args)
         - 1st arg: newly created obj
-            - automatically passed, ignored by caller
+            - automatically passed (ignored by caller)
         - *args: passed by caller (optional)
 - attributes of
     - class must be declared in class-body itself
-    - objs are only declared in constructor on self
-- method declarations for
-    - class:
-    - objs: 1st arg always self (automatically passed)
-- "dunder" methods (double underscore)
+    - objs are only declared in constructor using self
+- method declarations
+    - 1st arg: obj itself (automatically passed)
+    - *args: passed by caller, if needed
+- "dunder" methods (double underscore), e.g.
     -  __str__(self)
         - if not overwritten, address of obj is returned
 

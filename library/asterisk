@@ -2,7 +2,7 @@ asterisk
 
 destructing operator
 
-- operator for unpacking iterables
+- operator for (un-)packing iterables
     - allows for multiple assignments
     - if num of vars and num of vals do not match, raises ValueError
 - in conjunction with funcs
