@@ -6,7 +6,7 @@ built-in funcs
     - returns iterator yielding those elems of iterable for which func returns True
     - if func is None, returns elems that are True
 (2) map(func, iterables)
-    - applies func to each elem of the given iterable and returns iterator
+    - applies func to each elem of the given iterable(s) and returns iterator
     - may have multiple iterables
 (3) reduce(func, iterable, initial)  
     - applies func of two args cumulatively to elems of iterable, from left to right

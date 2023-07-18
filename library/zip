@@ -7,10 +7,11 @@ built-in func
     - combines args into a single iterable where elems from corresponding indices are paired together
     - returns new iterable zip-obj containing tuples (1)
     - stops at the end of the shortest iterable
-- use cases
+- use-cases
     (2) in conjunction with enumerate, e.g. to create index-based tables
     (3) to create dicts
     (4) to unzip, e.g. to get original iterables
+    (5) in conjunction with multiple assignment, to create multiple iterables from one
 
 EXAMPLE
 (1)
@@ -37,3 +38,8 @@ ls2 = [4, 2, 6]
 zipped = zip(ls1, ls2)
 a, b = zip(*zipped)
 print(list(a) == ls1, list(b) == ls2)  # True True
+
+(5)
+a, b = zip(*[(i, i ** 2) for i in range(2, 5)])
+print(a)  # (2, 3, 4)
+print(b)  # (4, 9, 16)

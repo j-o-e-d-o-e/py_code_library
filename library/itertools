@@ -2,25 +2,60 @@ itertools
 
 built-in module
 
-for creating/using iterators
-    (1) islice(iterable, start, stop[, step])
-        - returns iterator whose next() method returns selected values from an iterable
-        - if start given, will skip all preceding elements
-            - otherwise, defaults to zero
-        - if step given, determines how many vals are skipped between successive calls
-            - otherwise, defaults to 1
-        -  works like a slice() on a list but returns an iterator
-    (2) permutations(iterable, len)
-        - returns successive permutations of elems in the iterable
-        - if len is specified, determines length of each permutation result
-            - otherise, defaults to length of iterable
+- provides funcs that work on iterators, e.g. dict, list, set, tuple
+- infinte iterators
+    (1) count(start, step) creates infinite sequence of nums
+        - 2nd arg: how many to skip (optional)
+            - if not given, defaults to 1
+    (2) cycle(iterable) cycles through iterable repeatedly
+    (3) repeat(val, times) returns val repeatedly
+        - 2nd arg: how many times (optional)
+            - if not given, returns val infinitely
+- terminating iterators, e.g.
+    (4) accumulate(iterable, func) returns accumulated result after each iteration
+        - 2nd arg: func with two args (optional)
+            - if not given, elems are added
+        - initial val of accumulator apparently 1
+    (5) chain(iterables) returns elems of iterables one after another
+        - chain.from_iterable(iterable) for single nested iterable
+    (6) compress(iterable, iterable) selects elems from 1st arg according to 2nd arg
+        - 1st arg: vals possibly returned
+        - 2nd arg: True/1 or False/0 corresponding with index of 1st arg
+- combinatoric iterators
+    - product(iterables) computes cartsian product of iterables
+    - permutations(iterable, size) generates all possible permutations
+        - 2nd arg: size of each permutated group (optional)
+            - if not given, defaults to length of given iterable
+    - combinations(iterable) returns all poissble combinations
+
+- SEE ALSO
+    - entry: generator->next   
+    - geeksforgeeks.org/python-itertools/
 
 EXAMPLE
-import itertools as iter
-
-text = "joe doe"
-slice = list(iter.islice(text, 2, 8))
-print(slice)  # ['e', ' ', 'd', 'o', 'e']
-
-ls = list(iter.permutations(["r", "e", "d"], 2))
-print(ls)  # [('r', 'e'), ('r', 'd'), ('e', 'r'), ('e', 'd'), ('d', 'r'), ('d', 'e')]
+import itertools
+(1)
+for i in itertools.count(0, 12):
+    if i >= 30:
+        break
+    else:
+        print(i, end=" ")  # 0 12 24
+(2)
+ls = ['joe', 'doe']
+iterator = itertools.cycle(ls)
+for i in range(5):
+    item = next(iterator)
+    print(item, end=" ")  # joe doe joe doe joe
+(3)
+ls = list(itertools.repeat(3, 4))
+print(ls)  # [3, 3, 3, 3]
+(4)
+ls = [2, 4, 5, 2]
+res = list(itertools.accumulate(ls, lambda x, y: x * y))
+print(res)  # [2, 8, 40, 80]
+(5)
+res = list(itertools.chain([1, 2], [3, 4], [5, 6]))
+print(res)  # [1, 2, 3, 4, 5, 6]
+(6)
+res = list(itertools.compress('joe doe', [0, 1, 1, 0, 0, True, 1]))
+print(res)  # ['o', 'e', 'o', 'e']

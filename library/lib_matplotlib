@@ -1,0 +1,20 @@
+lib->matplotlib
+
+plotting graphs
+
+- to create plots/graphs
+- plot(iterable, iterable) plots graph
+    - 1st arg: axis vals
+    - 2nd arg: data
+    - 1st and 2nd args need to be of same length
+
+- SEE ALSO
+    - matplotlib.org
+    - /prog/py/http_plotter (for traffic-tracker-api)
+
+EXAMPLE
+from matplotlib import pylab
+
+a, b = zip(*[(i, i ** 2) for i in range(11)])
+pylab.plot(a, b, "g--", linewidth=3)
+pylab.show()
