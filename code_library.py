@@ -1,5 +1,9 @@
 import os
 import readline
+import sys
+
+TOC = 0
+EXIT = 667
 
 
 def setup_lib():
@@ -84,15 +88,27 @@ def main():
         except ValueError:
             print(ansi_format("No valid input."))
             continue
-        if user_input == 0:
+        if user_input == TOC:
             print("\n")
             print_toc(lib)
-        elif user_input == 667:
+        elif user_input == EXIT:
             print(ansi_format("Devil's neighbour wishes you a good day."))
             break
         else:
             print_entry(lib[user_input - 1])
 
 
+def flags(arg):
+    if arg == "-h" or arg == "--h" or arg == "-help" or arg == "--help":
+        print(ansi_format(" PYTHON CODE LIBRARY ".center(60, "="), bold=True))
+        print(
+            ansi_format(f"Commands:\n\t- {TOC}  : Table of Content"
+                        f"\n\t- {EXIT}: Exit"
+                        f"\n\t- s: : Search\n", RED))
+
+
 if __name__ == "__main__":
-    main()
+    if len(sys.argv) > 1:
+        flags(sys.argv[1])
+    else:
+        main()
