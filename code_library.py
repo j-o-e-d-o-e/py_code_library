@@ -16,7 +16,7 @@ def setup_lib():
                 f.readline()
                 entry["tags"] = f.readline().replace("\n", "")
                 lib.append(entry)
-    lib = sorted(lib, key=lambda entry: entry["title"])
+    lib = sorted(lib, key=lambda entry: entry["title"].lower())
     count = 1
     for entry in lib:
         entry["index"] = count
