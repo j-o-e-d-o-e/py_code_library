@@ -1,6 +1,7 @@
 import os
 import readline
 import sys
+import re
 
 TOC = 0
 EXIT = 667
@@ -75,27 +76,50 @@ def main():
     print_toc(lib)
     while True:
         user_input = input(ansi_format("\nWhat would you like to read? "))
-        if user_input.startswith('s:'):
+        if user_input.startswith("s:"):
             search_term = user_input[2:]
-            print("\n")
-            print_toc([entry for entry in lib if search_term.strip() in entry["tags"].lower()])
+            res = [entry for entry in lib if search_term.strip() in entry["tags"].lower()]
+            if not res:
+                readline.remove_history_item(readline.get_current_history_length() - 1)
+                print(ansi_format("No match found."))
+            else:
+                remove_history_item_if_duplicate(user_input)
+                print("\n")
+                print_toc(res)
             continue
         try:
-            user_input = int(user_input)
-            if user_input < 0 or (user_input > len(lib) and user_input != 667):
+            user_input = re.sub(" \\(.+\\)$", "", user_input)
+            num = int(user_input)
+            if num < 0 or (num > len(lib) and num != 667):
+                readline.remove_history_item(readline.get_current_history_length() - 1)
                 print(ansi_format("Out of range."))
                 continue
         except ValueError:
+            readline.remove_history_item(readline.get_current_history_length() - 1)
             print(ansi_format("No valid input."))
             continue
-        if user_input == TOC:
+        if num == TOC:
+            readline.remove_history_item(readline.get_current_history_length() - 1)
             print("\n")
             print_toc(lib)
-        elif user_input == EXIT:
+        elif num == EXIT:
             print(ansi_format("Devil's neighbour wishes you a good day."))
             break
         else:
-            print_entry(lib[user_input - 1])
+            entry = lib[num - 1]
+            item = f"{num} ({entry['title']})"
+            if not remove_history_item_if_duplicate(item):
+                readline.replace_history_item(readline.get_current_history_length() - 1, item)
+            print_entry(entry)
+
+
+def remove_history_item_if_duplicate(current):
+    for i in range(readline.get_current_history_length() - 1):
+        item = readline.get_history_item(i)
+        if item == current:
+            readline.remove_history_item(readline.get_current_history_length() - 1)
+            return True
+    return False
 
 
 def flags(arg):
