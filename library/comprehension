@@ -1,10 +1,13 @@
-list comprehension
+comprehension
 
 shorthand for for-loop
 
-- [expression for elem in iterable if-statement]
-    - if-statement is optional (1)
+- for lists: [expression for elem in list if-statement]
+    - if-statement is optional
     - returns new list
+- for sets: {expression for elem in set if-statement}
+- for dicts: {key-expr:dict[key]-expr for key in dict if-statement}
+- for generators: (expression for elem in gen if-statement)
 - useful to map (filtered) elems of given 
     (1) iterable to single val
         - equivalent to: list(filter(map()))
