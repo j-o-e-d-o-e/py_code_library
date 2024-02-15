@@ -18,7 +18,7 @@ built-in funcs/operators/module
             - if not given and iterable empty, throws ValueError
         - applicable for: list, dict, range, set, string, tuple
     - max(iterable, key, default) returns biggest elem (3)
-    - round(number, decimal) rounds down (4)
+    - round(number, decimal) rounds down for fractions < 0.5, up for >= 0.5 (4)
         - 1st arg: float to be rounded
         - 2nd arg: how many decimal places
             - if omitted, defaults to zero
