@@ -8,7 +8,7 @@ EXIT = 667
 
 
 def setup_lib():
-    os.chdir("library")
+    os.chdir("/home/joe/prog/py/code_library/library")
     lib = []
     for fn in os.listdir():
         if os.path.isfile(fn):
